@@ -1,0 +1,16 @@
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+
+// Variables
+@import 'variables';
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+
+// FontAwesome Icons
+@import "node_modules/font-awesome/scss/font-awesome.scss";
+
+//Overrides go here
+.fa {
+    cursor: pointer;
+}
