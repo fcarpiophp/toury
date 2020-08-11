@@ -30,6 +30,8 @@ Route::get('/event/show', 'EventsController@show');
 Route::get('/participant/create/{eventId}', 'ParticipantController@create');
 Route::post('/participant/store', 'ParticipantController@store');
 Route::get('/participant/show/{eventId}', 'ParticipantController@show');
+Route::get('/participant/showStanding/{eventId}', 'ParticipantController@saveStanding');
+Route::post('/participant/storeStanding/{eventId}/{participantId}/{round}/{status}', 'ParticipantController@storeStanding');
 
 // Blah test
 Route::get('/test', 'EventsController@chart');

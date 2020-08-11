@@ -13,7 +13,8 @@
                                     <tr>
                                         <th>Event Id</th>
                                         <th>Event Name</th>
-                                        <th>Add Participants</th>
+                                        <th>Add/Edit Participants</th>
+                                        <th>Set Winners</th>
                                         <th>Edit Event</th>
                                         <th>Delete Event</th>
                                     </tr>
@@ -22,6 +23,11 @@
                                     <td>{{$value->id}}</td>
                                     <td><a href="/participant/show/{{$value->id}}">{{$value->eventName}}</a></td>
                                     <td><i id="{{$value->id}}" class="fa fa-plus-circle" aria-hidden="true"></i></td>
+                                    <td>
+                                        <a href="/participant/showStanding/{{$value->id}}">
+                                            <i id="{{$value->id}}" class="fa fa-trophy" aria-hidden="true"></i>
+                                        </a>
+                                    </td>
                                     <td><i id="{{$value->id}}" class="fa fa-pencil-square-o" aria-hidden="true"></i></td>
                                     <td><i id="{{$value->id}}" class="fa fa-trash" aria-hidden="true"></i></td>
                                 </tr>

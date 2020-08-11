@@ -1,6 +1,4 @@
-<?php
-//    dump($participants[0]->participantName);
-//?>
+<?= dump($participants) ?>
 @extends('layouts.app')
 <style type="text/css">
     td {
@@ -32,12 +30,20 @@
         background-color: #CCCCCC;
         text-align: center;
         vertical-align: middle;
-        font-weight: bold;
+        font-size: 11pt;
         color: #666666;
     }
 
     table.chart td {
         align-content: center;
+    }
+
+    td {
+        text-align: center;
+    }
+
+    .btn.winner {
+        padding: 2px !important;
     }
 
 </style>
@@ -51,7 +57,7 @@
                         <table class="chart">
                             <tbody>
                             <tr>
-                                <td class="top left right" colspan=2>{{$participants[0]->participantName}}</td>
+                                <td class="top left right" colspan=2>{{$participants[0]->participantName ?? "n/a"}}</td>
                                 <td></td>
                                 <td></td>
                                 <td></td>
@@ -74,10 +80,10 @@
                                 <td></td>
                                 <td></td>
                                 <td></td>
-                                <td class="top left right" colspan=2>{{$participants[7]->participantName}}</td>
+                                <td class="top left right" colspan=2>{{$participants[7]->participantName ?? "n/a"}}</td>
                             </tr>
                             <tr>
-                                <td class="left right" colspan=2></td>
+                                <td class="left right winnerBtn" colspan=2></td>
                                 <td></td>
                                 <td></td>
                                 <td></td>
@@ -103,7 +109,7 @@
                                 <td class="left right" colspan=2></td>
                             </tr>
                             <tr>
-                                <td class="left right" colspan=2></td>
+                                <td class="left right" colspan=2><?= getSetWinnerForm($eventId, $participants[0]->id, 1, 1) ?></td>
                                 <td></td>
                                 <td></td>
                                 <td></td>
@@ -205,7 +211,7 @@
                                 <td class="bottom"></td>
                             </tr>
                             <tr>
-                                <td class="top left right" colspan=2>{{$participants[1]->participantName}}</td>
+                                <td class="top left right" colspan=2>{{$participants[1]->participantName ?? "n/a"}}</td>
                                 <td></td>
                                 <td class="bottom left right" colspan=2></td>
                                 <td></td>
@@ -226,7 +232,7 @@
                                 <td></td>
                                 <td class="bottom left right" colspan=2></td>
                                 <td></td>
-                                <td class="top left right" colspan=2>{{$participants[8]->participantName}}</td>
+                                <td class="top left right" colspan=2>{{$participants[8]->participantName ?? "n/a"}}</td>
                             </tr>
                             <tr>
                                 <td class="left right" colspan=2></td>
@@ -357,7 +363,7 @@
                                 <td class="bottom"></td>
                             </tr>
                             <tr>
-                                <td class="top left right" colspan=2>{{$participants[2]->participantName}}</td>
+                                <td class="top left right" colspan=2>{{$participants[2]->participantName ?? "n/a"}}</td>
                                 <td></td>
                                 <td></td>
                                 <td class="left"></td>
@@ -378,7 +384,7 @@
                                 <td></td>
                                 <td class="left"></td>
                                 <td></td>
-                                <td class="top left right" colspan=2>{{$participants[9]->participantName}}</td>
+                                <td class="top left right" colspan=2>{{$participants[9]->participantName ?? "n/a"}}</td>
                             </tr>
                             <tr>
                                 <td class="left right" colspan=2></td>
@@ -509,7 +515,7 @@
                                 <td class="bottom"></td>
                             </tr>
                             <tr>
-                                <td class="top left right" colspan=2>{{$participants[3]->participantName}}</td>
+                                <td class="top left right" colspan=2>{{$participants[3]->participantName ?? "n/a"}}</td>
                                 <td></td>
                                 <td class="bottom left right" colspan=2></td>
                                 <td></td>
@@ -530,7 +536,7 @@
                                 <td></td>
                                 <td class="bottom left right" colspan=2></td>
                                 <td></td>
-                                <td class="top left right" colspan=2>{{$participants[10]->participantName}}</td>
+                                <td class="top left right" colspan=2>{{$participants[10]->participantName ?? "n/a"}}</td>
                             </tr>
                             <tr>
                                 <td class="left right" colspan=2></td>
@@ -656,7 +662,7 @@
                                 <td class="bottom"></td>
                             </tr>
                             <tr>
-                                <td class="top left right" colspan=2>{{$participants[4]->participantName}}</td>
+                                <td class="top left right" colspan=2>{{$participants[4]->participantName ?? "n/a"}}</td>
                                 <td></td>
                                 <td></td>
                                 <td></td>
@@ -676,7 +682,7 @@
                                 <td></td>
                                 <td></td>
                                 <td></td>
-                                <td class="top left right" colspan=2>{{$participants[11]->participantName}}</td>
+                                <td class="top left right" colspan=2>{{$participants[11]->participantName ?? "n/a"}}</td>
                             </tr>
                             <tr>
                                 <td class="left right" colspan=2></td>
@@ -805,7 +811,7 @@
                                 <td class="bottom"></td>
                             </tr>
                             <tr>
-                                <td class="top left right" colspan=2>{{$participants[5]->participantName}}</td>
+                                <td class="top left right" colspan=2>{{$participants[5]->participantName ?? "n/a"}}</td>
                                 <td></td>
                                 <td class="bottom left right" colspan=2></td>
                                 <td></td>
@@ -826,7 +832,7 @@
                                 <td></td>
                                 <td class="bottom left right" colspan=2></td>
                                 <td></td>
-                                <td class="top left right" colspan=2>{{$participants[12]->participantName}}</td>
+                                <td class="top left right" colspan=2>{{$participants[12]->participantName ?? "n/a"}}</td>
                             </tr>
                             <tr>
                                 <td class="left right" colspan=2></td>
@@ -957,7 +963,7 @@
                                 <td class="bottom"></td>
                             </tr>
                             <tr>
-                                <td class="top left right" colspan=2>{{$participants[6]->participantName}}</td>
+                                <td class="top left right" colspan=2>{{$participants[6]->participantName ?? "n/a"}}</td>
                                 <td></td>
                                 <td></td>
                                 <td class="left"></td>
@@ -978,7 +984,7 @@
                                 <td></td>
                                 <td class="left"></td>
                                 <td></td>
-                                <td class="top left right" colspan=2>{{$participants[13]->participantName}}</td>
+                                <td class="top left right" colspan=2>{{$participants[13]->participantName ?? "n/a"}}</td>
                             </tr>
                             <tr>
                                 <td class="left right" colspan=2></td>
@@ -1109,7 +1115,7 @@
                                 <td class="bottom"></td>
                             </tr>
                             <tr>
-                                <td class="top left right" colspan=2>{{$participants[7]->participantName}}</td>
+                                <td class="top left right" colspan=2>{{$participants[7]->participantName ?? "n/a"}}</td>
                                 <td></td>
                                 <td class="bottom left right" colspan=2></td>
                                 <td></td>
@@ -1130,7 +1136,7 @@
                                 <td></td>
                                 <td class="bottom left right" colspan=2></td>
                                 <td></td>
-                                <td class="top left right" colspan=2>{{$participants[15]->participantName}}</td>
+                                <td class="top left right" colspan=2>{{$participants[15]->participantName ?? "n/a"}}</td>
                             </tr>
                             <tr>
                                 <td class="left right" colspan=2></td>
@@ -1217,3 +1223,22 @@
         </div>
     </div>
 @endsection
+
+<?php
+/**
+ * @param $eventId
+ * @param $participantId
+ * @param $round
+ * @param $status
+ */
+    function getSetWinnerForm($eventId, $participantId, $round, $status) {
+        echo '
+            <form method="POST" action="http://127.0.0.1:8000/participant/storeStanding/'.$eventId.'/'.$participantId.'/'.$round.'/'.$status.'" accept-charset="UTF-8">
+                <input name="_token" type="hidden" value="AhA883U0c9UYZkkxpICrWjBpbjsXzU0f7T19wM3X">
+                <input name="participantId" type="hidden" value="'.$participantId.'">
+                <button type="submit" class="btn btn-success">
+                    <i class="fa fa-trophy" aria-hidden="true"></i>
+                </button>
+            </form>';
+    }
+?>

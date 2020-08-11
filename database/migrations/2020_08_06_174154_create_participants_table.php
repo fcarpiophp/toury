@@ -17,6 +17,12 @@ class CreateParticipantsTable extends Migration
             $table->id();
             $table->integer('eventId');
             $table->string('participantName');
+            $table->integer('participantOrder');
+            $table->boolean('round1')->nullable();
+            $table->boolean('round2')->nullable();
+            $table->boolean('round3')->nullable();
+            $table->boolean('round4')->nullable();
+            $table->boolean('round5')->nullable();
             $table->timestamps();
         });
     }

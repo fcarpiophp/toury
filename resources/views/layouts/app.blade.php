@@ -54,7 +54,6 @@
                                     <div class="dropdown-menu">
                                         <a class="dropdown-item" href="/event/create">Create Event</a>
                                         <a class="dropdown-item" href="/event/show">Show Events</a>
-                                        <a class="dropdown-item" href="/event/edit">Edit Events</a>
                                     </div>
                                 </li>
                                 <li class="nav-item dropdown">

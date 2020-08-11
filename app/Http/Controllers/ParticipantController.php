@@ -40,11 +40,12 @@ class ParticipantController extends Controller
     {
         try {
             $data = $request->input();
-            foreach ($data['participantName'] as $partticipant) {
+            foreach ($data['participantName'] as $key => $participant) {
                 if (!empty($participant)) {
                     $participants = new Participant();
                     $participants->eventId = $data['eventId'];
-                    $participants->participantName = $partticipant;
+                    $participants->participantName = $participant;
+                    $participants->participantOrder = $key;
                     $participants->save();
                 }
             }
@@ -60,8 +61,8 @@ class ParticipantController extends Controller
      */
     public function show($eventId)
     {
-        $participants = DB::table('participants')->get()->where('eventId', $eventId);
-        return view('/participant/chart', ['participants' => $participants]);
+        $participants = DB::table('participants')->get()->where('eventId', $eventId)->sortBy('participantOrder');
+        return view('/participant/chartShow', ['participants' => $participants]);
     }
 
     /**
@@ -96,5 +97,58 @@ class ParticipantController extends Controller
     public function destroy(Participant $participant)
     {
         //
+    }
+
+    public function saveStanding($eventId) {
+        $participants = DB::table('participants')->get()->where('eventId', $eventId)->sortBy('participantOrder');
+        return view('/participant/chartEdit', ['participants' => $participants, 'eventId' => $eventId]);
+    }
+
+    public function storeStanding($eventId, $participantId, $round, $status) {
+        // Winner
+        $this->setStatus($participantId, $round, $status);
+
+        // Loser
+        $this->setStatus($this->getOpponentIdMatrix($participantId, $round), $round, !$status);
+
+        $participants = DB::table('participants')->get()->where('eventId', $eventId)->sortBy('participantOrder');
+        return view('/participant/chartEdit', ['participants' => $participants, 'eventId' => $eventId]);
+    }
+
+    /**
+     * @param $participantId
+     * @param $round
+     */
+    public function getOpponentIdMatrix($participantId, $round) {
+
+        switch ($round) {
+            case 1:
+                $opponentId = $this::getFirstRoundOpponentId($participantId);
+                break;
+            default:
+                $opponentId = null;
+        }
+
+        return $opponentId;
+    }
+
+    /**
+     * @param $participantId
+     * @param $round
+     * @param $status
+     */
+    public function setStatus($participantId, $round, $status): void
+    {
+        $affected = DB::table('participants')
+            ->where('id', $participantId)
+            ->update(['round' . $round => $status]);
+    }
+
+    /**
+     * @param $participantId
+     * @return bool
+     */
+    public static function getFirstRoundOpponentId($participantId) {
+        return $participantId % 2 == 0 ? $participantId - 1 : $participantId + 1;
     }
 }
