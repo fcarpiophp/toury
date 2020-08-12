@@ -62,7 +62,8 @@ class ParticipantController extends Controller
     public function show($eventId)
     {
         $participants = DB::table('participants')->get()->where('eventId', $eventId)->sortBy('participantOrder');
-        return view('/participant/chartShow', ['participants' => $participants]);
+        $indexedParticipants = $this->indexParticipants($participants);
+        return view('/participant/chartShow', ['participants' => $indexedParticipants]);
     }
 
     /**
@@ -99,30 +100,50 @@ class ParticipantController extends Controller
         //
     }
 
+    /**
+     * @param $eventId
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function saveStanding($eventId) {
         $participants = DB::table('participants')->get()->where('eventId', $eventId)->sortBy('participantOrder');
-        return view('/participant/chartEdit', ['participants' => $participants, 'eventId' => $eventId]);
+        $indexedParticipants = $this->indexParticipants($participants);
+        return view('/participant/chartEdit', ['participants' => $indexedParticipants, 'eventId' => $eventId]);
     }
 
+    /**
+     * @param $eventId
+     * @param $participantId
+     * @param $round
+     * @param $status
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function storeStanding($eventId, $participantId, $round, $status) {
-        // Winner
+        $participants = DB::table('participants')->get()->where('eventId', $eventId)->sortBy('participantOrder');
+        $indexedParticipants = $this->indexParticipants($participants);
+
+        // set winner
         $this->setStatus($participantId, $round, $status);
 
-        // Loser
-        $this->setStatus($this->getOpponentIdMatrix($participantId, $round), $round, !$status);
+        // set loser
+        $this->setStatus($this->getOpponentIdMatrix($participantId, $indexedParticipants, $round), $round, !$status);
 
+        // Get updated data
         $participants = DB::table('participants')->get()->where('eventId', $eventId)->sortBy('participantOrder');
-        return view('/participant/chartEdit', ['participants' => $participants, 'eventId' => $eventId]);
+        $indexedParticipants = $this->indexParticipants($participants);
+
+        return view('/participant/chartEdit', ['participants' => $indexedParticipants, 'eventId' => $eventId]);
     }
 
     /**
      * @param $participantId
+     * @param $participants
      * @param $round
+     * @return int|null
      */
-    public function getOpponentIdMatrix($participantId, $round) {
+    public function getOpponentIdMatrix($participantId, $participants, $round) {
         switch ($round) {
             case 1:
-                $opponentId = $this::getFirstRoundOpponentId($participantId);
+                $opponentId = $this::getFirstRoundOpponentId($participantId, $participants);
                 break;
             default:
                 $opponentId = null;
@@ -145,9 +166,31 @@ class ParticipantController extends Controller
 
     /**
      * @param $participantId
+     * @param $participants
      * @return int
      */
-    public static function getFirstRoundOpponentId($participantId) {
-        return  $participantId % 2 == 0 ? $participantId - 1 : $participantId + 1;
+    public static function getFirstRoundOpponentId($participantId, $participants) {
+        // Search re-indexed participants for this participant id
+        foreach ($participants as $key => $participant) {
+            if ($participant->id == $participantId) {
+                $reIndexedParticipantId = $key;
+                continue;
+            }
+        }
+
+        return $reIndexedParticipantId % 2 == 0 ? $participantId + 1 : $participantId - 1;
+    }
+
+    /**
+     * @param \Illuminate\Support\Collection $participants
+     * @return array
+     */
+    public function indexParticipants(\Illuminate\Support\Collection $participants): array
+    {
+        $indexedParticipants = array();
+        foreach ($participants as $participant) {
+            $indexedParticipants[] = $participant;
+        }
+        return $indexedParticipants;
     }
 }

@@ -37,6 +37,14 @@
         align-content: center;
     }
 
+    td {
+        text-align: center;
+    }
+
+    .btn.winner {
+        padding: 2px !important;
+    }
+
 </style>
 @section('content')
     <div class="chartContainer">
@@ -71,10 +79,10 @@
                                 <td></td>
                                 <td></td>
                                 <td></td>
-                                <td class="top left right" colspan=2>{{$participants[7]->participantName ?? "n/a"}}</td>
+                                <td class="top left right" colspan=2>{{$participants[8]->participantName ?? "n/a"}}</td>
                             </tr>
                             <tr>
-                                <td class="left right" colspan=2></td>
+                                <td class="left right winnerBtn" colspan=2></td>
                                 <td></td>
                                 <td></td>
                                 <td></td>
@@ -223,7 +231,7 @@
                                 <td></td>
                                 <td class="bottom left right" colspan=2></td>
                                 <td></td>
-                                <td class="top left right" colspan=2>{{$participants[8]->participantName ?? "n/a"}}</td>
+                                <td class="top left right" colspan=2>{{$participants[9]->participantName ?? "n/a"}}</td>
                             </tr>
                             <tr>
                                 <td class="left right" colspan=2></td>
@@ -375,7 +383,7 @@
                                 <td></td>
                                 <td class="left"></td>
                                 <td></td>
-                                <td class="top left right" colspan=2>{{$participants[9]->participantName ?? "n/a"}}</td>
+                                <td class="top left right" colspan=2>{{$participants[10]->participantName ?? "n/a"}}</td>
                             </tr>
                             <tr>
                                 <td class="left right" colspan=2></td>
@@ -527,7 +535,7 @@
                                 <td></td>
                                 <td class="bottom left right" colspan=2></td>
                                 <td></td>
-                                <td class="top left right" colspan=2>{{$participants[10]->participantName ?? "n/a"}}</td>
+                                <td class="top left right" colspan=2>{{$participants[11]->participantName ?? "n/a"}}</td>
                             </tr>
                             <tr>
                                 <td class="left right" colspan=2></td>
@@ -673,7 +681,7 @@
                                 <td></td>
                                 <td></td>
                                 <td></td>
-                                <td class="top left right" colspan=2>{{$participants[11]->participantName ?? "n/a"}}</td>
+                                <td class="top left right" colspan=2>{{$participants[12]->participantName ?? "n/a"}}</td>
                             </tr>
                             <tr>
                                 <td class="left right" colspan=2></td>
@@ -823,7 +831,7 @@
                                 <td></td>
                                 <td class="bottom left right" colspan=2></td>
                                 <td></td>
-                                <td class="top left right" colspan=2>{{$participants[12]->participantName ?? "n/a"}}</td>
+                                <td class="top left right" colspan=2>{{$participants[13]->participantName ?? "n/a"}}</td>
                             </tr>
                             <tr>
                                 <td class="left right" colspan=2></td>
@@ -975,7 +983,7 @@
                                 <td></td>
                                 <td class="left"></td>
                                 <td></td>
-                                <td class="top left right" colspan=2>{{$participants[13]->participantName ?? "n/a"}}</td>
+                                <td class="top left right" colspan=2>{{$participants[14]->participantName ?? "n/a"}}</td>
                             </tr>
                             <tr>
                                 <td class="left right" colspan=2></td>

@@ -1,4 +1,3 @@
-<?= dump($participants) ?>
 @extends('layouts.app')
 <style type="text/css">
     td {
@@ -34,6 +33,22 @@
         color: #666666;
     }
 
+    td.top.left.right.winner {
+        background-color: #d4edda;
+        text-align: center;
+        vertical-align: middle;
+        font-size: 11pt;
+        color: #155724;
+    }
+
+    td.top.left.right.loser {
+        background-color: #f8d7da;
+        text-align: center;
+        vertical-align: middle;
+        font-size: 11pt;
+        color: #721c24;
+    }
+
     table.chart td {
         align-content: center;
     }
@@ -57,7 +72,7 @@
                         <table class="chart">
                             <tbody>
                             <tr>
-                                <td class="top left right" colspan=2>{{$participants[0]->participantName ?? "n/a"}}</td>
+                                <td class="top left right <?= isWinner($participants[0]) ?>" colspan=2>{{$participants[0]->participantName ?? "n/a"}}</td>
                                 <td></td>
                                 <td></td>
                                 <td></td>
@@ -80,7 +95,7 @@
                                 <td></td>
                                 <td></td>
                                 <td></td>
-                                <td class="top left right" colspan=2>{{$participants[7]->participantName ?? "n/a"}}</td>
+                                <td class="top left right <?= isWinner($participants[8]) ?>" colspan=2>{{$participants[8]->participantName ?? "n/a"}}</td>
                             </tr>
                             <tr>
                                 <td class="left right winnerBtn" colspan=2></td>
@@ -110,13 +125,7 @@
                             </tr>
                             <tr>
                                 <td class="left right" colspan=2>
-                                    <form method="POST" action="http://127.0.0.1:8000/participant/storeStanding/{{$eventId}}/{{$participants[0]->id}}/1/1" accept-charset="UTF-8">
-                                        <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                                        <input name="participantId" type="hidden" value="{{$participants[0]->id}}">
-                                        <button type="submit" class="btn btn-success">
-                                            <i class="fa fa-trophy" aria-hidden="true"></i>
-                                        </button>
-                                    </form>
+                                    <?= getSetWinnerForm($eventId, $participants[0]->id, 1, 1) ?>
                                 </td>
                                 <td></td>
                                 <td></td>
@@ -140,7 +149,7 @@
                                 <td></td>
                                 <td></td>
                                 <td></td>
-                                <td class="left right" colspan=2></td>
+                                <td class="left right" colspan=2><?= getSetWinnerForm($eventId, $participants[8]->id, 1, 1) ?></td>
                             </tr>
                             <tr>
                                 <td class="bottom left right" colspan=2></td>
@@ -219,7 +228,7 @@
                                 <td class="bottom"></td>
                             </tr>
                             <tr>
-                                <td class="top left right" colspan=2>{{$participants[1]->participantName ?? "n/a"}}</td>
+                                <td class="top left right <?= isWinner($participants[1]) ?>" colspan=2>{{$participants[1]->participantName ?? "n/a"}}</td>
                                 <td></td>
                                 <td class="bottom left right" colspan=2></td>
                                 <td></td>
@@ -240,7 +249,7 @@
                                 <td></td>
                                 <td class="bottom left right" colspan=2></td>
                                 <td></td>
-                                <td class="top left right" colspan=2>{{$participants[8]->participantName ?? "n/a"}}</td>
+                                <td class="top left right <?= isWinner($participants[9]) ?>" colspan=2>{{$participants[9]->participantName ?? "n/a"}}</td>
                             </tr>
                             <tr>
                                 <td class="left right" colspan=2></td>
@@ -270,13 +279,7 @@
                             </tr>
                             <tr>
                                 <td class="left right" colspan=2>
-                                    <form method="POST" action="http://127.0.0.1:8000/participant/storeStanding/{{$eventId}}/{{$participants[1]->id}}/1/1" accept-charset="UTF-8">
-                                        <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                                        <input name="participantId" type="hidden" value="{{$participants[1]->id}}">
-                                        <button type="submit" class="btn btn-success">
-                                            <i class="fa fa-trophy" aria-hidden="true"></i>
-                                        </button>
-                                    </form>
+                                    <?= getSetWinnerForm($eventId, $participants[1]->id, 1, 1) ?>
                                 </td>
                                 <td></td>
                                 <td></td>
@@ -300,7 +303,7 @@
                                 <td></td>
                                 <td class="left"></td>
                                 <td></td>
-                                <td class="left right" colspan=2></td>
+                                <td class="left right" colspan=2><?= getSetWinnerForm($eventId, $participants[9]->id, 1, 1) ?></td>
                             </tr>
                             <tr>
                                 <td class="bottom left right" colspan=2></td>
@@ -379,7 +382,7 @@
                                 <td class="bottom"></td>
                             </tr>
                             <tr>
-                                <td class="top left right" colspan=2>{{$participants[2]->participantName ?? "n/a"}}</td>
+                                <td class="top left right <?= isWinner($participants[2]) ?>" colspan=2>{{$participants[2]->participantName ?? "n/a"}}</td>
                                 <td></td>
                                 <td></td>
                                 <td class="left"></td>
@@ -400,7 +403,7 @@
                                 <td></td>
                                 <td class="left"></td>
                                 <td></td>
-                                <td class="top left right" colspan=2>{{$participants[9]->participantName ?? "n/a"}}</td>
+                                <td class="top left right <?= isWinner($participants[10]) ?>" colspan=2>{{$participants[10]->participantName ?? "n/a"}}</td>
                             </tr>
                             <tr>
                                 <td class="left right" colspan=2></td>
@@ -429,7 +432,7 @@
                                 <td class="left right" colspan=2></td>
                             </tr>
                             <tr>
-                                <td class="left right" colspan=2></td>
+                                <td class="left right" colspan=2><?= getSetWinnerForm($eventId, $participants[2]->id, 1, 1) ?></td>
                                 <td></td>
                                 <td></td>
                                 <td class="left"></td>
@@ -452,7 +455,7 @@
                                 <td></td>
                                 <td class="left"></td>
                                 <td></td>
-                                <td class="left right" colspan=2></td>
+                                <td class="left right" colspan=2><?= getSetWinnerForm($eventId, $participants[10]->id, 1, 1) ?></td>
                             </tr>
                             <tr>
                                 <td class="bottom left right" colspan=2></td>
@@ -531,7 +534,7 @@
                                 <td class="bottom"></td>
                             </tr>
                             <tr>
-                                <td class="top left right" colspan=2>{{$participants[3]->participantName ?? "n/a"}}</td>
+                                <td class="top left right <?= isWinner($participants[3]) ?>" colspan=2>{{$participants[3]->participantName ?? "n/a"}}</td>
                                 <td></td>
                                 <td class="bottom left right" colspan=2></td>
                                 <td></td>
@@ -552,7 +555,7 @@
                                 <td></td>
                                 <td class="bottom left right" colspan=2></td>
                                 <td></td>
-                                <td class="top left right" colspan=2>{{$participants[10]->participantName ?? "n/a"}}</td>
+                                <td class="top left right <?= isWinner($participants[11]) ?>" colspan=2>{{$participants[11]->participantName ?? "n/a"}}</td>
                             </tr>
                             <tr>
                                 <td class="left right" colspan=2></td>
@@ -580,7 +583,7 @@
                                 <td class="left right" colspan=2></td>
                             </tr>
                             <tr>
-                                <td class="left right" colspan=2></td>
+                                <td class="left right" colspan=2><?= getSetWinnerForm($eventId, $participants[3]->id, 1, 1) ?></td>
                                 <td></td>
                                 <td></td>
                                 <td></td>
@@ -602,7 +605,7 @@
                                 <td></td>
                                 <td></td>
                                 <td></td>
-                                <td class="left right" colspan=2></td>
+                                <td class="left right" colspan=2><?= getSetWinnerForm($eventId, $participants[11]->id, 1, 1) ?></td>
                             </tr>
                             <tr>
                                 <td class="bottom left right" colspan=2></td>
@@ -678,7 +681,7 @@
                                 <td class="bottom"></td>
                             </tr>
                             <tr>
-                                <td class="top left right" colspan=2>{{$participants[4]->participantName ?? "n/a"}}</td>
+                                <td class="top left right <?= isWinner($participants[4]) ?>" colspan=2>{{$participants[4]->participantName ?? "n/a"}}</td>
                                 <td></td>
                                 <td></td>
                                 <td></td>
@@ -698,7 +701,7 @@
                                 <td></td>
                                 <td></td>
                                 <td></td>
-                                <td class="top left right" colspan=2>{{$participants[11]->participantName ?? "n/a"}}</td>
+                                <td class="top left right <?= isWinner($participants[12]) ?>" colspan=2>{{$participants[12]->participantName ?? "n/a"}}</td>
                             </tr>
                             <tr>
                                 <td class="left right" colspan=2></td>
@@ -726,7 +729,7 @@
                                 <td class="left right" colspan=2></td>
                             </tr>
                             <tr>
-                                <td class="left right" colspan=2></td>
+                                <td class="left right" colspan=2><?= getSetWinnerForm($eventId, $participants[4]->id, 1, 1) ?></td>
                                 <td></td>
                                 <td></td>
                                 <td></td>
@@ -748,7 +751,7 @@
                                 <td></td>
                                 <td></td>
                                 <td></td>
-                                <td class="left right" colspan=2></td>
+                                <td class="left right" colspan=2><?= getSetWinnerForm($eventId, $participants[12]->id, 1, 1) ?></td>
                             </tr>
                             <tr>
                                 <td class="bottom left right" colspan=2></td>
@@ -827,7 +830,7 @@
                                 <td class="bottom"></td>
                             </tr>
                             <tr>
-                                <td class="top left right" colspan=2>{{$participants[5]->participantName ?? "n/a"}}</td>
+                                <td class="top left right <?= isWinner($participants[5]) ?>" colspan=2>{{$participants[5]->participantName ?? "n/a"}}</td>
                                 <td></td>
                                 <td class="bottom left right" colspan=2></td>
                                 <td></td>
@@ -848,7 +851,7 @@
                                 <td></td>
                                 <td class="bottom left right" colspan=2></td>
                                 <td></td>
-                                <td class="top left right" colspan=2>{{$participants[12]->participantName ?? "n/a"}}</td>
+                                <td class="top left right <?= isWinner($participants[13]) ?>" colspan=2>{{$participants[13]->participantName ?? "n/a"}}</td>
                             </tr>
                             <tr>
                                 <td class="left right" colspan=2></td>
@@ -877,7 +880,7 @@
                                 <td class="left right" colspan=2></td>
                             </tr>
                             <tr>
-                                <td class="left right" colspan=2></td>
+                                <td class="left right" colspan=2><?= getSetWinnerForm($eventId, $participants[5]->id, 1, 1) ?></td>
                                 <td></td>
                                 <td></td>
                                 <td class="left"></td>
@@ -900,7 +903,7 @@
                                 <td></td>
                                 <td class="left"></td>
                                 <td></td>
-                                <td class="left right" colspan=2></td>
+                                <td class="left right" colspan=2><?= getSetWinnerForm($eventId, $participants[13]->id, 1, 1) ?></td>
                             </tr>
                             <tr>
                                 <td class="bottom left right" colspan=2></td>
@@ -979,7 +982,7 @@
                                 <td class="bottom"></td>
                             </tr>
                             <tr>
-                                <td class="top left right" colspan=2>{{$participants[6]->participantName ?? "n/a"}}</td>
+                                <td class="top left right <?= isWinner($participants[6]) ?>" colspan=2>{{$participants[6]->participantName ?? "n/a"}}</td>
                                 <td></td>
                                 <td></td>
                                 <td class="left"></td>
@@ -1000,7 +1003,7 @@
                                 <td></td>
                                 <td class="left"></td>
                                 <td></td>
-                                <td class="top left right" colspan=2>{{$participants[13]->participantName ?? "n/a"}}</td>
+                                <td class="top left right <?= isWinner($participants[14]) ?>" colspan=2>{{$participants[14]->participantName ?? "n/a"}}</td>
                             </tr>
                             <tr>
                                 <td class="left right" colspan=2></td>
@@ -1029,7 +1032,7 @@
                                 <td class="left right" colspan=2></td>
                             </tr>
                             <tr>
-                                <td class="left right" colspan=2></td>
+                                <td class="left right" colspan=2><?= getSetWinnerForm($eventId, $participants[6]->id, 1, 1) ?></td>
                                 <td></td>
                                 <td></td>
                                 <td class="left"></td>
@@ -1052,7 +1055,7 @@
                                 <td></td>
                                 <td class="left"></td>
                                 <td></td>
-                                <td class="left right" colspan=2></td>
+                                <td class="left right" colspan=2><?= getSetWinnerForm($eventId, $participants[14]->id, 1, 1) ?></td>
                             </tr>
                             <tr>
                                 <td class="bottom left right" colspan=2></td>
@@ -1131,7 +1134,7 @@
                                 <td class="bottom"></td>
                             </tr>
                             <tr>
-                                <td class="top left right" colspan=2>{{$participants[7]->participantName ?? "n/a"}}</td>
+                                <td class="top left right <?= isWinner($participants[7]) ?>" colspan=2>{{$participants[7]->participantName ?? "n/a"}}</td>
                                 <td></td>
                                 <td class="bottom left right" colspan=2></td>
                                 <td></td>
@@ -1152,7 +1155,7 @@
                                 <td></td>
                                 <td class="bottom left right" colspan=2></td>
                                 <td></td>
-                                <td class="top left right" colspan=2>{{$participants[15]->participantName ?? "n/a"}}</td>
+                                <td class="top left right <?= isWinner($participants[15]) ?>" colspan=2>{{$participants[15]->participantName ?? "n/a"}}</td>
                             </tr>
                             <tr>
                                 <td class="left right" colspan=2></td>
@@ -1181,7 +1184,7 @@
                                 <td class="left right" colspan=2></td>
                             </tr>
                             <tr>
-                                <td class="left right" colspan=2></td>
+                                <td class="left right" colspan=2><?= getSetWinnerForm($eventId, $participants[7]->id, 1, 1) ?></td>
                                 <td></td>
                                 <td></td>
                                 <td></td>
@@ -1204,7 +1207,7 @@
                                 <td></td>
                                 <td></td>
                                 <td></td>
-                                <td class="left right" colspan=2></td>
+                                <td class="left right" colspan=2><?= getSetWinnerForm($eventId, $participants[15]->id, 1, 1) ?></td>
                             </tr>
                             <tr>
                                 <td class="bottom left right" colspan=2></td>
@@ -1241,20 +1244,34 @@
 @endsection
 
 <?php
-/**
- * @param $eventId
- * @param $participantId
- * @param $round
- * @param $status
- */
+    /**
+     * @param $eventId
+     * @param $participantId
+     * @param $round
+     * @param $status
+     */
     function getSetWinnerForm($eventId, $participantId, $round, $status) {
         echo '
-            <form method="POST" action="http://127.0.0.1:8000/participant/storeStanding/{{$eventId}}/{{$participants[0]->id}}/round1/1" accept-charset="UTF-8">
-                <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                <input name="participantId" type="hidden" value="{{$participants[0]->id}}">
+            <form method="POST" action="/participant/storeStanding/'.$eventId.'/'.$participantId.'/'.$round.'/'.$status.'" accept-charset="UTF-8">
+                <input type="hidden" name="_token" value="'.csrf_token().'">
+                <input name="participantId" type="hidden" value="'.$participantId.'">
                 <button type="submit" class="btn btn-success">
                     <i class="fa fa-trophy" aria-hidden="true"></i>
                 </button>
             </form>';
+    }
+
+    /**
+    * @param $participant
+     * @return string
+     */
+    function isWinner($participant) {
+        if ($participant->round1) {
+            return 'winner';
+        } elseif (!$participant->round1) {
+            return 'loser';
+        } else {
+            return '';
+        }
     }
 ?>
