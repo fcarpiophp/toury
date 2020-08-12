@@ -109,7 +109,15 @@
                                 <td class="left right" colspan=2></td>
                             </tr>
                             <tr>
-                                <td class="left right" colspan=2><?= getSetWinnerForm($eventId, $participants[0]->id, 1, 1) ?></td>
+                                <td class="left right" colspan=2>
+                                    <form method="POST" action="http://127.0.0.1:8000/participant/storeStanding/{{$eventId}}/{{$participants[0]->id}}/1/1" accept-charset="UTF-8">
+                                        <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                        <input name="participantId" type="hidden" value="{{$participants[0]->id}}">
+                                        <button type="submit" class="btn btn-success">
+                                            <i class="fa fa-trophy" aria-hidden="true"></i>
+                                        </button>
+                                    </form>
+                                </td>
                                 <td></td>
                                 <td></td>
                                 <td></td>
@@ -261,7 +269,15 @@
                                 <td class="left right" colspan=2></td>
                             </tr>
                             <tr>
-                                <td class="left right" colspan=2></td>
+                                <td class="left right" colspan=2>
+                                    <form method="POST" action="http://127.0.0.1:8000/participant/storeStanding/{{$eventId}}/{{$participants[1]->id}}/1/1" accept-charset="UTF-8">
+                                        <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                        <input name="participantId" type="hidden" value="{{$participants[1]->id}}">
+                                        <button type="submit" class="btn btn-success">
+                                            <i class="fa fa-trophy" aria-hidden="true"></i>
+                                        </button>
+                                    </form>
+                                </td>
                                 <td></td>
                                 <td></td>
                                 <td class="left"></td>
@@ -1233,9 +1249,9 @@
  */
     function getSetWinnerForm($eventId, $participantId, $round, $status) {
         echo '
-            <form method="POST" action="http://127.0.0.1:8000/participant/storeStanding/'.$eventId.'/'.$participantId.'/'.$round.'/'.$status.'" accept-charset="UTF-8">
-                <input name="_token" type="hidden" value="AhA883U0c9UYZkkxpICrWjBpbjsXzU0f7T19wM3X">
-                <input name="participantId" type="hidden" value="'.$participantId.'">
+            <form method="POST" action="http://127.0.0.1:8000/participant/storeStanding/{{$eventId}}/{{$participants[0]->id}}/round1/1" accept-charset="UTF-8">
+                <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                <input name="participantId" type="hidden" value="{{$participants[0]->id}}">
                 <button type="submit" class="btn btn-success">
                     <i class="fa fa-trophy" aria-hidden="true"></i>
                 </button>

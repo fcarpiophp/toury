@@ -23,14 +23,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d0cbd75b-61b1-4aee-a5bf-db7cd6ccd184" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/views/participant/chartShow.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/storage/debugbar/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/toury.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/toury.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ParticipantController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ParticipantController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_08_06_174154_create_participants_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_08_06_174154_create_participants_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/event/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/event/show.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/participant/chart.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/participant/chartEdit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/participant/chartEdit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/participant/chartEdit.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -148,6 +148,10 @@
       <path value="$PROJECT_DIR$/vendor/composer" />
       <path value="$PROJECT_DIR$/vendor/laravel/ui" />
       <path value="$PROJECT_DIR$/vendor/laravelcollective/html" />
+      <path value="$PROJECT_DIR$/vendor/barryvdh/laravel-debugbar" />
+      <path value="$PROJECT_DIR$/vendor/maximebf/debugbar" />
+      <path value="$PROJECT_DIR$/vendor/league/mime-type-detection" />
+      <path value="$PROJECT_DIR$/vendor/symfony/debug" />
     </include_path>
   </component>
   <component name="ProjectId" id="1fjCspCpDvIttJmHgwkR9O1HP2Y" />
@@ -249,13 +253,17 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="629" y="318" key="EditFileWatcherDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1597068974235" />
-    <state x="616" y="250" key="run.anything.popup" timestamp="1597072389772">
+    <state x="92" y="92" width="1736" height="896" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1597197302907">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="616" y="250" key="run.anything.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1597072389772" />
-    <state x="623" y="235" width="672" height="678" key="search.everywhere.popup" timestamp="1597102480368">
+    <state x="92" y="92" width="1736" height="896" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1597197302907" />
+    <state x="616" y="250" key="run.anything.popup" timestamp="1597197913698">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="623" y="235" width="672" height="678" key="search.everywhere.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1597102480368" />
+    <state x="616" y="250" key="run.anything.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1597197913698" />
+    <state x="623" y="235" width="672" height="678" key="search.everywhere.popup" timestamp="1597171341944">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="623" y="235" width="672" height="678" key="search.everywhere.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1597171341944" />
   </component>
 </project>

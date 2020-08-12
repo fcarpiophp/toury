@@ -120,7 +120,6 @@ class ParticipantController extends Controller
      * @param $round
      */
     public function getOpponentIdMatrix($participantId, $round) {
-
         switch ($round) {
             case 1:
                 $opponentId = $this::getFirstRoundOpponentId($participantId);
@@ -141,14 +140,14 @@ class ParticipantController extends Controller
     {
         $affected = DB::table('participants')
             ->where('id', $participantId)
-            ->update(['round' . $round => $status]);
+            ->update(['round'.$round => $status]);
     }
 
     /**
      * @param $participantId
-     * @return bool
+     * @return int
      */
     public static function getFirstRoundOpponentId($participantId) {
-        return $participantId % 2 == 0 ? $participantId - 1 : $participantId + 1;
+        return  $participantId % 2 == 0 ? $participantId - 1 : $participantId + 1;
     }
 }
