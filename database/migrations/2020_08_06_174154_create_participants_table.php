@@ -18,11 +18,11 @@ class CreateParticipantsTable extends Migration
             $table->integer('eventId');
             $table->string('participantName');
             $table->integer('participantOrder');
-            $table->boolean('round1')->nullable();
-            $table->boolean('round2')->nullable();
-            $table->boolean('round3')->nullable();
-            $table->boolean('round4')->nullable();
-            $table->boolean('round5')->nullable();
+            $table->string('round1')->default('na');
+            $table->string('round2')->default('na');
+            $table->string('round3')->default('na');
+            $table->string('round4')->default('na');
+            $table->string('round5')->default('na');
             $table->timestamps();
         });
     }

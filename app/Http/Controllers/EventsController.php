@@ -98,4 +98,9 @@ class EventsController extends Controller
     {
         //
     }
+
+    public function chart()
+    {
+        return View::make('/test');
+    }
 }

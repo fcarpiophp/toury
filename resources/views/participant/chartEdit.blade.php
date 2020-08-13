@@ -5,7 +5,7 @@
         width: 70px;
     }
 
-    .top {
+    .header {
         border-top: 1px solid #CCCCCC;
     }
 
@@ -25,7 +25,7 @@
         max-width: 95% !important;
     }
 
-    td.top.left.right {
+    td.header.left.right {
         background-color: #CCCCCC;
         text-align: center;
         vertical-align: middle;
@@ -33,7 +33,7 @@
         color: #666666;
     }
 
-    td.top.left.right.winner {
+    td.header.left.right.winner {
         background-color: #d4edda;
         text-align: center;
         vertical-align: middle;
@@ -41,7 +41,7 @@
         color: #155724;
     }
 
-    td.top.left.right.loser {
+    td.header.left.right.loser {
         background-color: #f8d7da;
         text-align: center;
         vertical-align: middle;
@@ -125,7 +125,7 @@
                             </tr>
                             <tr>
                                 <td class="left right" colspan=2>
-                                    <?= !empty ($participants[0]->id) ? getSetWinnerForm($eventId, $participants[0]->id, 1, 1) : '' ?>
+                                    <?= !empty ($participants[0]->id) ? getSetWinnerForm($eventId, $participants[0]->id, 1) : '' ?>
                                 </td>
                                 <td></td>
                                 <td></td>
@@ -150,13 +150,13 @@
                                 <td></td>
                                 <td></td>
                                 <td class="left right" colspan=2>
-                                    <?= !empty ($participants[8]->id) ? getSetWinnerForm($eventId, $participants[8]->id, 1, 1) : '' ?>
+                                    <?= !empty ($participants[8]->id) ? getSetWinnerForm($eventId, $participants[8]->id, 1) : '' ?>
                                 </td>
                             </tr>
                             <tr>
                                 <td class="bottom left right" colspan=2></td>
                                 <td></td>
-                                <td class="top left right" colspan=2>level21L</td>
+                                <td class="top left right" colspan=2><?= getWinnerFromPreviousRound($participants[0], $participants[1], 1) ?></td>
                                 <td></td>
                                 <td></td>
                                 <td></td>
@@ -281,7 +281,7 @@
                             </tr>
                             <tr>
                                 <td class="left right" colspan=2>
-                                    <?= !empty ($participants[1]->id) ? getSetWinnerForm($eventId, $participants[1]->id, 1, 1) : '' ?>
+                                    <?= !empty ($participants[1]->id) ? getSetWinnerForm($eventId, $participants[1]->id, 1) : '' ?>
                                 </td>
                                 <td></td>
                                 <td></td>
@@ -306,7 +306,7 @@
                                 <td class="left"></td>
                                 <td></td>
                                 <td class="left right" colspan=2>
-                                    <?= !empty ($participants[9]->id) ? getSetWinnerForm($eventId, $participants[9]->id, 1, 1) : '' ?>
+                                    <?= !empty ($participants[9]->id) ? getSetWinnerForm($eventId, $participants[9]->id, 1) : '' ?>
                                 </td>
                             </tr>
                             <tr>
@@ -437,7 +437,7 @@
                             </tr>
                             <tr>
                                 <td class="left right" colspan=2>
-                                    <?= !empty ($participants[2]->id) ? getSetWinnerForm($eventId, $participants[2]->id, 1, 1) : '' ?>
+                                    <?= !empty ($participants[2]->id) ? getSetWinnerForm($eventId, $participants[2]->id, 1) : '' ?>
                                 </td>
                                 <td></td>
                                 <td></td>
@@ -462,7 +462,7 @@
                                 <td class="left"></td>
                                 <td></td>
                                 <td class="left right" colspan=2>
-                                    <?= !empty ($participants[10]->id) ? getSetWinnerForm($eventId, $participants[10]->id, 1, 1) : '' ?>
+                                    <?= !empty ($participants[10]->id) ? getSetWinnerForm($eventId, $participants[10]->id, 1) : '' ?>
                                 </td>
                             </tr>
                             <tr>
@@ -592,7 +592,7 @@
                             </tr>
                             <tr>
                                 <td class="left right" colspan=2>
-                                    <?= !empty ($participants[3]->id) ? getSetWinnerForm($eventId, $participants[3]->id, 1, 1) : '' ?>
+                                    <?= !empty ($participants[3]->id) ? getSetWinnerForm($eventId, $participants[3]->id, 1) : '' ?>
                                 </td>
                                 <td></td>
                                 <td></td>
@@ -616,7 +616,7 @@
                                 <td></td>
                                 <td></td>
                                 <td class="left right" colspan=2>
-                                    <?= !empty ($participants[11]->id) ? getSetWinnerForm($eventId, $participants[11]->id, 1, 1) : '' ?>
+                                    <?= !empty ($participants[11]->id) ? getSetWinnerForm($eventId, $participants[11]->id, 1) : '' ?>
                                 </td>
                             </tr>
                             <tr>
@@ -742,7 +742,7 @@
                             </tr>
                             <tr>
                                 <td class="left right" colspan=2>
-                                    <?= !empty ($participants[4]->id) ? getSetWinnerForm($eventId, $participants[4]->id, 1, 1) : '' ?>
+                                    <?= !empty ($participants[4]->id) ? getSetWinnerForm($eventId, $participants[4]->id, 1) : '' ?>
                                 </td>
                                 <td></td>
                                 <td></td>
@@ -766,7 +766,7 @@
                                 <td></td>
                                 <td></td>
                                 <td class="left right" colspan=2>
-                                    <?= !empty ($participants[12]->id) ? getSetWinnerForm($eventId, $participants[12]->id, 1, 1) : '' ?>
+                                    <?= !empty ($participants[12]->id) ? getSetWinnerForm($eventId, $participants[12]->id, 1) : '' ?>
                                 </td>
                             </tr>
                             <tr>
@@ -897,7 +897,7 @@
                             </tr>
                             <tr>
                                 <td class="left right" colspan=2>
-                                    <?= !empty ($participants[5]->id) ? getSetWinnerForm($eventId, $participants[5]->id, 1, 1) : '' ?>
+                                    <?= !empty ($participants[5]->id) ? getSetWinnerForm($eventId, $participants[5]->id, 1) : '' ?>
                                 </td>
                                 <td></td>
                                 <td></td>
@@ -922,7 +922,7 @@
                                 <td class="left"></td>
                                 <td></td>
                                 <td class="left right" colspan=2>
-                                    <?= !empty ($participants[13]->id) ? getSetWinnerForm($eventId, $participants[13]->id, 1, 1) : '' ?>
+                                    <?= !empty ($participants[13]->id) ? getSetWinnerForm($eventId, $participants[13]->id, 1) : '' ?>
                                 </td>
                             </tr>
                             <tr>
@@ -1053,7 +1053,7 @@
                             </tr>
                             <tr>
                                 <td class="left right" colspan=2>
-                                    <?= !empty ($participants[6]->id) ? getSetWinnerForm($eventId, $participants[6]->id, 1, 1) : '' ?>
+                                    <?= !empty ($participants[6]->id) ? getSetWinnerForm($eventId, $participants[6]->id, 1) : '' ?>
                                 </td>
                                 <td></td>
                                 <td></td>
@@ -1078,7 +1078,7 @@
                                 <td class="left"></td>
                                 <td></td>
                                 <td class="left right" colspan=2>
-                                    <?= !empty ($participants[14]->id) ? getSetWinnerForm($eventId, $participants[14]->id, 1, 1) : '' ?>
+                                    <?= !empty ($participants[14]->id) ? getSetWinnerForm($eventId, $participants[14]->id, 1) : '' ?>
                                 </td>
                             </tr>
                             <tr>
@@ -1209,7 +1209,7 @@
                             </tr>
                             <tr>
                                 <td class="left right" colspan=2>
-                                    <?= !empty ($participants[7]->id) ? getSetWinnerForm($eventId, $participants[7]->id, 1, 1) : '' ?>
+                                    <?= !empty ($participants[7]->id) ? getSetWinnerForm($eventId, $participants[7]->id, 1) : '' ?>
                                 </td>
                                 <td></td>
                                 <td></td>
@@ -1234,7 +1234,7 @@
                                 <td></td>
                                 <td></td>
                                 <td class="left right" colspan=2>
-                                    <?= !empty ($participants[15]->id) ? getSetWinnerForm($eventId, $participants[15]->id, 1, 1) : '' ?>
+                                    <?= !empty ($participants[15]->id) ? getSetWinnerForm($eventId, $participants[15]->id, 1) : '' ?>
                                 </td>
                             </tr>
                             <tr>
@@ -1272,37 +1272,56 @@
 @endsection
 
 <?php
-    /**
-     * @param $eventId
-     * @param $participantId
-     * @param $round
-     * @param $status
-     */
-    function getSetWinnerForm($eventId, $participantId, $round, $status) {
-        if (!empty($participantId)) {
-            return '
-            <form method="POST" action="/participant/storeStanding/'.$eventId.'/'.$participantId.'/'.$round.'/'.$status.'" accept-charset="UTF-8">
+/**
+ * @param $eventId
+ * @param $participantId
+ * @param $round
+ * @return string
+ */
+function getSetWinnerForm($eventId, $participantId, $round) {
+    if (!empty($participantId)) {
+        return '
+            <form method="POST" action="/participant/storeStanding/'.$eventId.'/'.$participantId.'/'.$round.'" accept-charset="UTF-8">
                 <input type="hidden" name="_token" value="'.csrf_token().'">
                 <input name="participantId" type="hidden" value="'.$participantId.'">
                 <button type="submit" class="btn btn-success">
                     <i class="fa fa-trophy" aria-hidden="true"></i>
                 </button>
             </form>';
-        }
+    }
+    return '';
+}
+
+/**
+ * @param $participant
+ * @return string
+ */
+function isWinner($participant) {
+    if ($participant->round1 === 'win') {
+        return 'winner';
+    } elseif ($participant->round1 === 'lose') {
+        return 'loser';
+    } else {
         return '';
     }
+}
 
-    /**
-    * @param $participant
-     * @return string
-     */
-    function isWinner($participant) {
-        if ($participant->round1) {
-            return 'winner';
-        } elseif (!$participant->round1) {
-            return 'loser';
-        } else {
-            return '';
-        }
+/**
+ * @param $participant1
+ * @param $participant2
+ * @param $previousRound
+ * @return string
+ */
+function getWinnerFromPreviousRound($participant1, $participant2, $previousRound) {
+    $round = 'round' . $previousRound;
+    if ($participant1->$round ==='win') {
+        return $participant1->participantName;
+    } elseif ($participant1->$round ==='win') {
+        return $participant1->participantName;
+    } elseif ($participant1->$round ==='na' && $participant2->$round ==='na') {
+        return 'TBD';
+    } else {
+        return '';
     }
+}
 ?>

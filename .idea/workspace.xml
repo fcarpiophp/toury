@@ -23,8 +23,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d0cbd75b-61b1-4aee-a5bf-db7cd6ccd184" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/resources/views/test.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/EventsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/EventsController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ParticipantController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ParticipantController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_08_06_174154_create_participants_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_08_06_174154_create_participants_table.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/participant/chartEdit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/participant/chartEdit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/participant/chartShow.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/participant/chartShow.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -210,6 +216,7 @@
       <workItem from="1596812838871" duration="47000" />
       <workItem from="1596812942344" duration="9783000" />
       <workItem from="1596966585476" duration="39962000" />
+      <workItem from="1597357611236" duration="1195000" />
     </task>
     <servers />
   </component>
@@ -252,10 +259,10 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="629" y="318" key="EditFileWatcherDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1597068974235" />
-    <state x="92" y="92" width="1736" height="896" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1597197302907">
+    <state x="92" y="92" width="1736" height="896" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1597337179317">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="92" y="92" width="1736" height="896" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1597197302907" />
+    <state x="92" y="92" width="1736" height="896" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1597337179317" />
     <state x="616" y="250" key="run.anything.popup" timestamp="1597246136422">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>

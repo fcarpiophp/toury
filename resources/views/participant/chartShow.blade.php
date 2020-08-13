@@ -5,7 +5,7 @@
         width: 70px;
     }
 
-    .top {
+    .header {
         border-top: 1px solid #CCCCCC;
     }
 
@@ -25,7 +25,7 @@
         max-width: 95% !important;
     }
 
-    td.top.left.right {
+    td.header.left.right {
         background-color: #CCCCCC;
         text-align: center;
         vertical-align: middle;

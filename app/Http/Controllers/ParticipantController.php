@@ -117,15 +117,15 @@ class ParticipantController extends Controller
      * @param $status
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function storeStanding($eventId, $participantId, $round, $status) {
+    public function storeStanding($eventId, $participantId, $round) {
         $participants = DB::table('participants')->get()->where('eventId', $eventId)->sortBy('participantOrder');
         $indexedParticipants = $this->indexParticipants($participants);
 
         // set winner
-        $this->setStatus($participantId, $round, $status);
+        $this->setStatus($participantId, $round, 'win');
 
         // set loser
-        $this->setStatus($this->getOpponentIdMatrix($participantId, $indexedParticipants, $round), $round, !$status);
+        $this->setStatus($this->getOpponentIdMatrix($participantId, $indexedParticipants, $round), $round, 'lose');
 
         // Get updated data
         $participants = DB::table('participants')->get()->where('eventId', $eventId)->sortBy('participantOrder');
