@@ -62,8 +62,10 @@ class ParticipantController extends Controller
     public function show($eventId)
     {
         $participants = DB::table('participants')->get()->where('eventId', $eventId)->sortBy('participantOrder');
+        $event = DB::table('events')->get()->where('id', $eventId)->first();
         $indexedParticipants = $this->indexParticipants($participants);
-        return view('/participant/chartShow', ['participants' => $indexedParticipants]);
+        //return view('/participant/chartShow', ['participants' => $indexedParticipants]);
+        return view('/participant/chartEdit', ['participants' => $indexedParticipants, 'event' => $event]);
     }
 
     /**
@@ -106,8 +108,9 @@ class ParticipantController extends Controller
      */
     public function saveStanding($eventId) {
         $participants = DB::table('participants')->get()->where('eventId', $eventId)->sortBy('participantOrder');
+        $event = DB::table('events')->get()->where('id', $eventId)->first();
         $indexedParticipants = $this->indexParticipants($participants);
-        return view('/participant/chartEdit', ['participants' => $indexedParticipants, 'eventId' => $eventId]);
+        return view('/participant/chartEdit', ['participants' => $indexedParticipants, 'event' => $event]);
     }
 
     /**
@@ -119,6 +122,7 @@ class ParticipantController extends Controller
      */
     public function storeStanding($eventId, $participantId, $round) {
         $participants = DB::table('participants')->get()->where('eventId', $eventId)->sortBy('participantOrder');
+        $event = DB::table('events')->get()->where('id', $eventId)->first();
         $indexedParticipants = $this->indexParticipants($participants);
 
         // set winner
@@ -131,7 +135,7 @@ class ParticipantController extends Controller
         $participants = DB::table('participants')->get()->where('eventId', $eventId)->sortBy('participantOrder');
         $indexedParticipants = $this->indexParticipants($participants);
 
-        return view('/participant/chartEdit', ['participants' => $indexedParticipants, 'eventId' => $eventId]);
+        return view('/participant/chartEdit', ['participants' => $indexedParticipants, 'event' => $event]);
     }
 
     /**
@@ -188,9 +192,33 @@ class ParticipantController extends Controller
     public function indexParticipants(\Illuminate\Support\Collection $participants): array
     {
         $indexedParticipants = array();
-        foreach ($participants as $participant) {
-            $indexedParticipants[] = $participant;
+        $twoTierParticipants = array();
+
+        if ($participants->count() < 9) {
+            foreach ($participants as $participant) {
+                $indexedParticipants['round2'][] = $participant;
+            }
+            return $indexedParticipants;
         }
-        return $indexedParticipants;
+
+        if ($participants->count() > 8) {
+            foreach ($participants as $participant) {
+                $indexedParticipants[] = $participant;
+            }
+
+            $round1Participants  = 2 * (count($participants) - 8);
+            $round2StartingIndex = $round1Participants / 2;
+
+            foreach ($indexedParticipants as $participant) {
+                if ($round1Participants-- > 0) {
+                    $twoTierParticipants['round1'][] = $participant;
+                } else {
+                    $twoTierParticipants['round2'][$round2StartingIndex++] = $participant;
+                }
+            }
+        }
+
+        return $twoTierParticipants;
+
     }
 }
