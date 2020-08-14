@@ -24,9 +24,8 @@
   <component name="ChangeListManager">
     <list default="true" id="d0cbd75b-61b1-4aee-a5bf-db7cd6ccd184" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ParticipantController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ParticipantController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/sass/appOverride.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/appOverride.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/participant/chartEdit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/participant/chartEdit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/participant/chartShow.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/participant/chartShow.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -212,7 +211,7 @@
       <workItem from="1596812838871" duration="47000" />
       <workItem from="1596812942344" duration="9783000" />
       <workItem from="1596966585476" duration="39962000" />
-      <workItem from="1597357611236" duration="6675000" />
+      <workItem from="1597357611236" duration="9011000" />
     </task>
     <servers />
   </component>

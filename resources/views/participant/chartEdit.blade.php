@@ -1,5 +1,5 @@
 <?php
-    dump($participants);
+dump($participants);
 ?>
 @extends('layouts.app')
 <style type="text/css">
@@ -72,6 +72,10 @@
     td {
         height: 20px;
         width: 70px;
+        vertical-align: middle;
+        text-align: center;
+        font-size: 10pt;
+        color: #155724;
     }
 
     td.header {
@@ -111,7 +115,7 @@
                     <div class="card-body">
                         <table border="0">
                             <tr class="" id="">
-                                <td class="header" id ="" colspan="2"></td>
+                                <td class="header" id ="" colspan="2"><?= getInitialParticipantName($participants, 0, 1) ?></td>
                                 <td class="" id=""></td>
                                 <td class="" id=""></td>
                                 <td class="" id=""></td>
@@ -236,7 +240,7 @@
                                 <td class="" id=""></td>
                             </tr>
                             <tr class="" id="">
-                                <td class="header" id ="" colspan="2"></td>
+                                <td class="header" id ="" colspan="2"><?= getInitialParticipantName($participants, 1, 1) ?></td>
                                 <td class="" id=""></td>
                                 <td class="footer" id="" colspan="2"></td>
                                 <td class="" id=""></td>
@@ -360,7 +364,7 @@
                                 <td class="" id=""></td>
                             </tr>
                             <tr class="" id="">
-                                <td class="header" id ="" colspan="2"></td>
+                                <td class="header" id ="" colspan="2"><?= getInitialParticipantName($participants, 2, 1) ?></td>
                                 <td class="" id=""></td>
                                 <td class="" id=""></td>
                                 <td class="left" id=""></td>
@@ -484,7 +488,7 @@
                                 <td class="" id=""></td>
                             </tr>
                             <tr class="" id="">
-                                <td class="header" id ="" colspan="2"></td>
+                                <td class="header" id ="" colspan="2"><?= getInitialParticipantName($participants, 3, 1) ?></td>
                                 <td class="" id=""></td>
                                 <td class="footer" id="" colspan="2"></td>
                                 <td class="" id=""></td>
@@ -608,7 +612,7 @@
                                 <td class="" id=""></td>
                             </tr>
                             <tr class="" id="">
-                                <td class="header" id ="" colspan="2"></td>
+                                <td class="header" id ="" colspan="2"><?= getInitialParticipantName($participants, 4, 1) ?></td>
                                 <td class="" id=""></td>
                                 <td class="" id=""></td>
                                 <td class="" id=""></td>
@@ -732,7 +736,7 @@
                                 <td class="" id=""></td>
                             </tr>
                             <tr class="" id="">
-                                <td class="header" id ="" colspan="2"></td>
+                                <td class="header" id ="" colspan="2"><?= getInitialParticipantName($participants, 5, 1) ?></td>
                                 <td class="" id=""></td>
                                 <td class="footer" id="" colspan="2"></td>
                                 <td class="" id=""></td>
@@ -856,7 +860,7 @@
                                 <td class="" id=""></td>
                             </tr>
                             <tr class="" id="">
-                                <td class="header" id ="" colspan="2"></td>
+                                <td class="header" id ="" colspan="2"><?= getInitialParticipantName($participants, 6, 1) ?></td>
                                 <td class="" id=""></td>
                                 <td class="" id=""></td>
                                 <td class="left" id=""></td>
@@ -980,7 +984,7 @@
                                 <td class="" id=""></td>
                             </tr>
                             <tr class="" id="">
-                                <td class="header" id ="" colspan="2"></td>
+                                <td class="header" id ="" colspan="2"><?= getInitialParticipantName($participants, 7, 1) ?></td>
                                 <td class="" id=""></td>
                                 <td class="footer" id="" colspan="2"></td>
                                 <td class="" id=""></td>
@@ -1104,7 +1108,7 @@
                                 <td class="" id=""></td>
                             </tr>
                             <tr class="" id="">
-                                <td class="header" id ="" colspan="2"></td>
+                                <td class="header" id ="" colspan="2"><?= getInitialParticipantName($participants, 8, 1) ?></td>
                                 <td class="" id=""></td>
                                 <td class="" id=""></td>
                                 <td class="" id=""></td>
@@ -1172,254 +1176,6 @@
                                 <td class="" id=""></td>
                                 <td class="" id=""></td>
                                 <td class="" id=""></td>
-                                <td class="" id=""></td>
-                                <td class="" id=""></td>
-                                <td class="left" id=""></td>
-                                <td class="" id=""></td>
-                                <td class="" id=""></td>
-                                <td class="" id=""></td>
-                                <td class="" id=""></td>
-                                <td class="" id=""></td>
-                                <td class="" id=""></td>
-                                <td class="" id=""></td>
-                                <td class="" id=""></td>
-                                <td class="" id=""></td>
-                            </tr>
-                            <tr class="" id="">
-                                <td class="" id=""></td>
-                                <td class="left bottom" id=""></td>
-                                <td class="bottom" id=""></td>
-                                <td class="body" id="" colspan="2"></td>
-                                <td class="" id=""></td>
-                                <td class="" id=""></td>
-                                <td class="" id=""></td>
-                                <td class="" id=""></td>
-                                <td class="" id=""></td>
-                                <td class="left" id=""></td>
-                                <td class="" id=""></td>
-                                <td class="" id=""></td>
-                                <td class="" id=""></td>
-                                <td class="" id=""></td>
-                                <td class="" id=""></td>
-                                <td class="" id=""></td>
-                                <td class="" id=""></td>
-                                <td class="" id=""></td>
-                                <td class="" id=""></td>
-                            </tr>
-                            <tr class="" id="">
-                                <td class="" id=""></td>
-                                <td class="left" id=""></td>
-                                <td class="" id=""></td>
-                                <td class="body" id="" colspan="2"></td>
-                                <td class="" id=""></td>
-                                <td class="" id=""></td>
-                                <td class="" id=""></td>
-                                <td class="" id=""></td>
-                                <td class="" id=""></td>
-                                <td class="left" id=""></td>
-                                <td class="" id=""></td>
-                                <td class="" id=""></td>
-                                <td class="" id=""></td>
-                                <td class="" id=""></td>
-                                <td class="" id=""></td>
-                                <td class="" id=""></td>
-                                <td class="" id=""></td>
-                                <td class="" id=""></td>
-                                <td class="" id=""></td>
-                            </tr>
-                            <tr class="" id="">
-                                <td class="header" id ="" colspan="2"></td>
-                                <td class="" id=""></td>
-                                <td class="footer" id="" colspan="2"></td>
-                                <td class="" id=""></td>
-                                <td class="" id=""></td>
-                                <td class="" id=""></td>
-                                <td class="" id=""></td>
-                                <td class="" id=""></td>
-                                <td class="left" id=""></td>
-                                <td class="" id=""></td>
-                                <td class="" id=""></td>
-                                <td class="" id=""></td>
-                                <td class="" id=""></td>
-                                <td class="" id=""></td>
-                                <td class="" id=""></td>
-                                <td class="" id=""></td>
-                                <td class="" id=""></td>
-                                <td class="" id=""></td>
-                            </tr>
-                            <tr class="" id="">
-                                <td class="body" id ="" colspan="2"></td>
-                                <td class="" id=""></td>
-                                <td class="" id=""></td>
-                                <td class="left" id=""></td>
-                                <td class="" id=""></td>
-                                <td class="" id=""></td>
-                                <td class="" id=""></td>
-                                <td class="" id=""></td>
-                                <td class="" id=""></td>
-                                <td class="left" id=""></td>
-                                <td class="" id=""></td>
-                                <td class="" id=""></td>
-                                <td class="" id=""></td>
-                                <td class="" id=""></td>
-                                <td class="" id=""></td>
-                                <td class="" id=""></td>
-                                <td class="" id=""></td>
-                                <td class="" id=""></td>
-                                <td class="" id=""></td>
-                            </tr>
-                            <tr class="" id="">
-                                <td class="body" id ="" colspan="2"></td>
-                                <td class="" id=""></td>
-                                <td class="" id=""></td>
-                                <td class="left" id=""></td>
-                                <td class="" id=""></td>
-                                <td class="" id=""></td>
-                                <td class="" id=""></td>
-                                <td class="" id=""></td>
-                                <td class="" id=""></td>
-                                <td class="left" id=""></td>
-                                <td class="" id=""></td>
-                                <td class="" id=""></td>
-                                <td class="" id=""></td>
-                                <td class="" id=""></td>
-                                <td class="" id=""></td>
-                                <td class="" id=""></td>
-                                <td class="" id=""></td>
-                                <td class="" id=""></td>
-                                <td class="" id=""></td>
-                            </tr>
-                            <tr class="" id="">
-                                <td class="footer" id ="" colspan="2"></td>
-                                <td class="" id=""></td>
-                                <td class="" id=""></td>
-                                <td class="left" id=""></td>
-                                <td class="" id=""></td>
-                                <td class="header" id="" colspan="2"></td>
-                                <td class="" id=""></td>
-                                <td class="" id=""></td>
-                                <td class="left" id=""></td>
-                                <td class="" id=""></td>
-                                <td class="" id=""></td>
-                                <td class="" id=""></td>
-                                <td class="" id=""></td>
-                                <td class="" id=""></td>
-                                <td class="" id=""></td>
-                                <td class="" id=""></td>
-                                <td class="" id=""></td>
-                                <td class="" id=""></td>
-                            </tr>
-                            <tr class="" id="">
-                                <td class="" id=""></td>
-                                <td class="" id=""></td>
-                                <td class="" id=""></td>
-                                <td class="" id=""></td>
-                                <td class="left bottom" id=""></td>
-                                <td class="bottom" id=""></td>
-                                <td class="body" id="" colspan="2"></td>
-                                <td class="" id=""></td>
-                                <td class="" id=""></td>
-                                <td class="left" id=""></td>
-                                <td class="" id=""></td>
-                                <td class="" id=""></td>
-                                <td class="" id=""></td>
-                                <td class="" id=""></td>
-                                <td class="" id=""></td>
-                                <td class="" id=""></td>
-                                <td class="" id=""></td>
-                                <td class="" id=""></td>
-                                <td class="" id=""></td>
-                            </tr>
-                            <tr class="" id="">
-                                <td class="" id=""></td>
-                                <td class="" id=""></td>
-                                <td class="" id=""></td>
-                                <td class="" id=""></td>
-                                <td class="left" id=""></td>
-                                <td class="" id=""></td>
-                                <td class="body" id="" colspan="2"></td>
-                                <td class="" id=""></td>
-                                <td class="" id=""></td>
-                                <td class="left" id=""></td>
-                                <td class="" id=""></td>
-                                <td class="" id=""></td>
-                                <td class="" id=""></td>
-                                <td class="" id=""></td>
-                                <td class="" id=""></td>
-                                <td class="" id=""></td>
-                                <td class="" id=""></td>
-                                <td class="" id=""></td>
-                                <td class="" id=""></td>
-                            </tr>
-                            <tr class="" id="">
-                                <td class="header" id ="" colspan="2"></td>
-                                <td class="" id=""></td>
-                                <td class="" id=""></td>
-                                <td class="left" id=""></td>
-                                <td class="" id=""></td>
-                                <td class="footer" id="" colspan="2"></td>
-                                <td class="" id=""></td>
-                                <td class="" id=""></td>
-                                <td class="left" id=""></td>
-                                <td class="" id=""></td>
-                                <td class="" id=""></td>
-                                <td class="" id=""></td>
-                                <td class="" id=""></td>
-                                <td class="" id=""></td>
-                                <td class="" id=""></td>
-                                <td class="" id=""></td>
-                                <td class="" id=""></td>
-                                <td class="" id=""></td>
-                            </tr>
-                            <tr class="" id="">
-                                <td class="body" id ="" colspan="2"></td>
-                                <td class="" id=""></td>
-                                <td class="" id=""></td>
-                                <td class="left" id=""></td>
-                                <td class="" id=""></td>
-                                <td class="" id=""></td>
-                                <td class="left" id=""></td>
-                                <td class="" id=""></td>
-                                <td class="" id=""></td>
-                                <td class="left" id=""></td>
-                                <td class="" id=""></td>
-                                <td class="" id=""></td>
-                                <td class="" id=""></td>
-                                <td class="" id=""></td>
-                                <td class="" id=""></td>
-                                <td class="" id=""></td>
-                                <td class="" id=""></td>
-                                <td class="" id=""></td>
-                                <td class="" id=""></td>
-                            </tr>
-                            <tr class="" id="">
-                                <td class="body" id ="" colspan="2"></td>
-                                <td class="" id=""></td>
-                                <td class="" id=""></td>
-                                <td class="left" id=""></td>
-                                <td class="" id=""></td>
-                                <td class="" id=""></td>
-                                <td class="left" id=""></td>
-                                <td class="" id=""></td>
-                                <td class="" id=""></td>
-                                <td class="left" id=""></td>
-                                <td class="" id=""></td>
-                                <td class="" id=""></td>
-                                <td class="" id=""></td>
-                                <td class="" id=""></td>
-                                <td class="" id=""></td>
-                                <td class="" id=""></td>
-                                <td class="" id=""></td>
-                                <td class="" id=""></td>
-                                <td class="" id=""></td>
-                            </tr>
-                            <tr class="" id="">
-                                <td class="footer" id ="" colspan="2"></td>
-                                <td class="" id=""></td>
-                                <td class="header" id="" colspan="2"></td>
-                                <td class="" id=""></td>
-                                <td class="" id=""></td>
-                                <td class="left" id=""></td>
                                 <td class="" id=""></td>
                                 <td class="" id=""></td>
                                 <td class="left" id=""></td>
@@ -1440,6 +1196,254 @@
                                 <td class="body" id="" colspan="2"></td>
                                 <td class="" id=""></td>
                                 <td class="" id=""></td>
+                                <td class="" id=""></td>
+                                <td class="" id=""></td>
+                                <td class="" id=""></td>
+                                <td class="left" id=""></td>
+                                <td class="" id=""></td>
+                                <td class="" id=""></td>
+                                <td class="" id=""></td>
+                                <td class="" id=""></td>
+                                <td class="" id=""></td>
+                                <td class="" id=""></td>
+                                <td class="" id=""></td>
+                                <td class="" id=""></td>
+                                <td class="" id=""></td>
+                            </tr>
+                            <tr class="" id="">
+                                <td class="" id=""></td>
+                                <td class="left" id=""></td>
+                                <td class="" id=""></td>
+                                <td class="body" id="" colspan="2"></td>
+                                <td class="" id=""></td>
+                                <td class="" id=""></td>
+                                <td class="" id=""></td>
+                                <td class="" id=""></td>
+                                <td class="" id=""></td>
+                                <td class="left" id=""></td>
+                                <td class="" id=""></td>
+                                <td class="" id=""></td>
+                                <td class="" id=""></td>
+                                <td class="" id=""></td>
+                                <td class="" id=""></td>
+                                <td class="" id=""></td>
+                                <td class="" id=""></td>
+                                <td class="" id=""></td>
+                                <td class="" id=""></td>
+                            </tr>
+                            <tr class="" id="">
+                                <td class="header" id ="" colspan="2"><?= getInitialParticipantName($participants, 9, 1) ?></td>
+                                <td class="" id=""></td>
+                                <td class="footer" id="" colspan="2"></td>
+                                <td class="" id=""></td>
+                                <td class="" id=""></td>
+                                <td class="" id=""></td>
+                                <td class="" id=""></td>
+                                <td class="" id=""></td>
+                                <td class="left" id=""></td>
+                                <td class="" id=""></td>
+                                <td class="" id=""></td>
+                                <td class="" id=""></td>
+                                <td class="" id=""></td>
+                                <td class="" id=""></td>
+                                <td class="" id=""></td>
+                                <td class="" id=""></td>
+                                <td class="" id=""></td>
+                                <td class="" id=""></td>
+                            </tr>
+                            <tr class="" id="">
+                                <td class="body" id ="" colspan="2"></td>
+                                <td class="" id=""></td>
+                                <td class="" id=""></td>
+                                <td class="left" id=""></td>
+                                <td class="" id=""></td>
+                                <td class="" id=""></td>
+                                <td class="" id=""></td>
+                                <td class="" id=""></td>
+                                <td class="" id=""></td>
+                                <td class="left" id=""></td>
+                                <td class="" id=""></td>
+                                <td class="" id=""></td>
+                                <td class="" id=""></td>
+                                <td class="" id=""></td>
+                                <td class="" id=""></td>
+                                <td class="" id=""></td>
+                                <td class="" id=""></td>
+                                <td class="" id=""></td>
+                                <td class="" id=""></td>
+                            </tr>
+                            <tr class="" id="">
+                                <td class="body" id ="" colspan="2"></td>
+                                <td class="" id=""></td>
+                                <td class="" id=""></td>
+                                <td class="left" id=""></td>
+                                <td class="" id=""></td>
+                                <td class="" id=""></td>
+                                <td class="" id=""></td>
+                                <td class="" id=""></td>
+                                <td class="" id=""></td>
+                                <td class="left" id=""></td>
+                                <td class="" id=""></td>
+                                <td class="" id=""></td>
+                                <td class="" id=""></td>
+                                <td class="" id=""></td>
+                                <td class="" id=""></td>
+                                <td class="" id=""></td>
+                                <td class="" id=""></td>
+                                <td class="" id=""></td>
+                                <td class="" id=""></td>
+                            </tr>
+                            <tr class="" id="">
+                                <td class="footer" id ="" colspan="2"></td>
+                                <td class="" id=""></td>
+                                <td class="" id=""></td>
+                                <td class="left" id=""></td>
+                                <td class="" id=""></td>
+                                <td class="header" id="" colspan="2"></td>
+                                <td class="" id=""></td>
+                                <td class="" id=""></td>
+                                <td class="left" id=""></td>
+                                <td class="" id=""></td>
+                                <td class="" id=""></td>
+                                <td class="" id=""></td>
+                                <td class="" id=""></td>
+                                <td class="" id=""></td>
+                                <td class="" id=""></td>
+                                <td class="" id=""></td>
+                                <td class="" id=""></td>
+                                <td class="" id=""></td>
+                            </tr>
+                            <tr class="" id="">
+                                <td class="" id=""></td>
+                                <td class="" id=""></td>
+                                <td class="" id=""></td>
+                                <td class="" id=""></td>
+                                <td class="left bottom" id=""></td>
+                                <td class="bottom" id=""></td>
+                                <td class="body" id="" colspan="2"></td>
+                                <td class="" id=""></td>
+                                <td class="" id=""></td>
+                                <td class="left" id=""></td>
+                                <td class="" id=""></td>
+                                <td class="" id=""></td>
+                                <td class="" id=""></td>
+                                <td class="" id=""></td>
+                                <td class="" id=""></td>
+                                <td class="" id=""></td>
+                                <td class="" id=""></td>
+                                <td class="" id=""></td>
+                                <td class="" id=""></td>
+                            </tr>
+                            <tr class="" id="">
+                                <td class="" id=""></td>
+                                <td class="" id=""></td>
+                                <td class="" id=""></td>
+                                <td class="" id=""></td>
+                                <td class="left" id=""></td>
+                                <td class="" id=""></td>
+                                <td class="body" id="" colspan="2"></td>
+                                <td class="" id=""></td>
+                                <td class="" id=""></td>
+                                <td class="left" id=""></td>
+                                <td class="" id=""></td>
+                                <td class="" id=""></td>
+                                <td class="" id=""></td>
+                                <td class="" id=""></td>
+                                <td class="" id=""></td>
+                                <td class="" id=""></td>
+                                <td class="" id=""></td>
+                                <td class="" id=""></td>
+                                <td class="" id=""></td>
+                            </tr>
+                            <tr class="" id="">
+                                <td class="header" id ="" colspan="2"><?= getInitialParticipantName($participants, 10, 1) ?></td>
+                                <td class="" id=""></td>
+                                <td class="" id=""></td>
+                                <td class="left" id=""></td>
+                                <td class="" id=""></td>
+                                <td class="footer" id="" colspan="2"></td>
+                                <td class="" id=""></td>
+                                <td class="" id=""></td>
+                                <td class="left" id=""></td>
+                                <td class="" id=""></td>
+                                <td class="" id=""></td>
+                                <td class="" id=""></td>
+                                <td class="" id=""></td>
+                                <td class="" id=""></td>
+                                <td class="" id=""></td>
+                                <td class="" id=""></td>
+                                <td class="" id=""></td>
+                                <td class="" id=""></td>
+                            </tr>
+                            <tr class="" id="">
+                                <td class="body" id ="" colspan="2"></td>
+                                <td class="" id=""></td>
+                                <td class="" id=""></td>
+                                <td class="left" id=""></td>
+                                <td class="" id=""></td>
+                                <td class="" id=""></td>
+                                <td class="left" id=""></td>
+                                <td class="" id=""></td>
+                                <td class="" id=""></td>
+                                <td class="left" id=""></td>
+                                <td class="" id=""></td>
+                                <td class="" id=""></td>
+                                <td class="" id=""></td>
+                                <td class="" id=""></td>
+                                <td class="" id=""></td>
+                                <td class="" id=""></td>
+                                <td class="" id=""></td>
+                                <td class="" id=""></td>
+                                <td class="" id=""></td>
+                            </tr>
+                            <tr class="" id="">
+                                <td class="body" id ="" colspan="2"></td>
+                                <td class="" id=""></td>
+                                <td class="" id=""></td>
+                                <td class="left" id=""></td>
+                                <td class="" id=""></td>
+                                <td class="" id=""></td>
+                                <td class="left" id=""></td>
+                                <td class="" id=""></td>
+                                <td class="" id=""></td>
+                                <td class="left" id=""></td>
+                                <td class="" id=""></td>
+                                <td class="" id=""></td>
+                                <td class="" id=""></td>
+                                <td class="" id=""></td>
+                                <td class="" id=""></td>
+                                <td class="" id=""></td>
+                                <td class="" id=""></td>
+                                <td class="" id=""></td>
+                                <td class="" id=""></td>
+                            </tr>
+                            <tr class="" id="">
+                                <td class="footer" id ="" colspan="2"></td>
+                                <td class="" id=""></td>
+                                <td class="header" id="" colspan="2"></td>
+                                <td class="" id=""></td>
+                                <td class="" id=""></td>
+                                <td class="left" id=""></td>
+                                <td class="" id=""></td>
+                                <td class="" id=""></td>
+                                <td class="left" id=""></td>
+                                <td class="" id=""></td>
+                                <td class="" id=""></td>
+                                <td class="" id=""></td>
+                                <td class="" id=""></td>
+                                <td class="" id=""></td>
+                                <td class="" id=""></td>
+                                <td class="" id=""></td>
+                                <td class="" id=""></td>
+                                <td class="" id=""></td>
+                            </tr>
+                            <tr class="" id="">
+                                <td class="" id=""></td>
+                                <td class="left bottom" id=""></td>
+                                <td class="bottom" id=""></td>
+                                <td class="body" id="" colspan="2"></td>
+                                <td class="" id=""></td>
+                                <td class="" id=""></td>
                                 <td class="left" id=""></td>
                                 <td class="" id=""></td>
                                 <td class="" id=""></td>
@@ -1476,7 +1480,7 @@
                                 <td class="" id=""></td>
                             </tr>
                             <tr class="" id="">
-                                <td class="header" id ="" colspan="2"></td>
+                                <td class="header" id ="" colspan="2"><?= getInitialParticipantName($participants, 11, 1) ?></td>
                                 <td class="" id=""></td>
                                 <td class="footer" id="" colspan="2"></td>
                                 <td class="" id=""></td>
@@ -1600,7 +1604,7 @@
                                 <td class="" id=""></td>
                             </tr>
                             <tr class="" id="">
-                                <td class="header" id ="" colspan="2"></td>
+                                <td class="header" id ="" colspan="2"><?= getInitialParticipantName($participants, 12, 1) ?></td>
                                 <td class="" id=""></td>
                                 <td class="" id=""></td>
                                 <td class="" id=""></td>
@@ -1724,7 +1728,7 @@
                                 <td class="" id=""></td>
                             </tr>
                             <tr class="" id="">
-                                <td class="header" id ="" colspan="2"></td>
+                                <td class="header" id ="" colspan="2"><?= getInitialParticipantName($participants, 13, 1) ?></td>
                                 <td class="" id=""></td>
                                 <td class="footer" id="" colspan="2"></td>
                                 <td class="" id=""></td>
@@ -1848,7 +1852,7 @@
                                 <td class="" id=""></td>
                             </tr>
                             <tr class="" id="">
-                                <td class="header" id ="" colspan="2"></td>
+                                <td class="header" id ="" colspan="2"><?= getInitialParticipantName($participants, 14, 1) ?></td>
                                 <td class="" id=""></td>
                                 <td class="" id=""></td>
                                 <td class="left" id=""></td>
@@ -1972,7 +1976,7 @@
                                 <td class="" id=""></td>
                             </tr>
                             <tr class="" id="">
-                                <td class="header" id ="" colspan="2"></td>
+                                <td class="header" id ="" colspan="2"><?= getInitialParticipantName($participants, 15, 1) ?></td>
                                 <td class="" id=""></td>
                                 <td class="footer" id="" colspan="2"></td>
                                 <td class="" id=""></td>
@@ -2114,5 +2118,15 @@ function getWinnerFromPreviousRound($participant1, $participant2, $previousRound
     } else {
         return '';
     }
+}
+
+/**
+ * @param $participants
+ * @param $index
+ * @param $round
+ * @return mixed|string
+ */
+function getInitialParticipantName($participants, $index, $round) {
+    return !empty($participants['round'.$round][$index]->participantName) ? $participants['round1'][$index]->participantName : 'n/a';
 }
 ?>
