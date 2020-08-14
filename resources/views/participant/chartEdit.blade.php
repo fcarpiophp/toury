@@ -2102,7 +2102,7 @@ function isWinner($participant) {
 }
 
 /**
- * @param $participant1
+ * @param $participant1 
  * @param $participant2
  * @param $previousRound
  * @return string
