@@ -115,7 +115,9 @@ dump($participants);
                     <div class="card-body">
                         <table border="0">
                             <tr class="" id="">
-                                <td class="header" id ="" colspan="2"><?= getInitialParticipantName($participants, 0, 1) ?></td>
+                                <td class="header" id ="" colspan="2">
+                                    <?= getInitialParticipantName($participants, 0, 1) ?>
+                                </td>
                                 <td class="" id=""></td>
                                 <td class="" id=""></td>
                                 <td class="" id=""></td>
@@ -180,7 +182,9 @@ dump($participants);
                             <tr class="" id="">
                                 <td class="footer" id ="" colspan="2"></td>
                                 <td class="" id=""></td>
-                                <td class="header" id="" colspan="2"></td>
+                                <td class="header" id ="" colspan="2">
+                                    <?= getInitialParticipantName($participants, 0, 2) ?>
+                                </td>
                                 <td class="" id=""></td>
                                 <td class="" id=""></td>
                                 <td class="" id=""></td>
@@ -240,7 +244,9 @@ dump($participants);
                                 <td class="" id=""></td>
                             </tr>
                             <tr class="" id="">
-                                <td class="header" id ="" colspan="2"><?= getInitialParticipantName($participants, 1, 1) ?></td>
+                                <td class="header" id ="" colspan="2">
+                                    <?= getInitialParticipantName($participants, 1, 1) ?>
+                                </td>
                                 <td class="" id=""></td>
                                 <td class="footer" id="" colspan="2"></td>
                                 <td class="" id=""></td>
@@ -364,7 +370,9 @@ dump($participants);
                                 <td class="" id=""></td>
                             </tr>
                             <tr class="" id="">
-                                <td class="header" id ="" colspan="2"><?= getInitialParticipantName($participants, 2, 1) ?></td>
+                                <td class="header" id ="" colspan="2">
+                                    <?= getInitialParticipantName($participants, 2, 1) ?>
+                                </td>
                                 <td class="" id=""></td>
                                 <td class="" id=""></td>
                                 <td class="left" id=""></td>
@@ -428,7 +436,9 @@ dump($participants);
                             <tr class="" id="">
                                 <td class="footer" id ="" colspan="2"></td>
                                 <td class="" id=""></td>
-                                <td class="header" id="" colspan="2"></td>
+                                <td class="header" id ="" colspan="2">
+                                    <?= getInitialParticipantName($participants, 1, 2) ?>
+                                </td>
                                 <td class="" id=""></td>
                                 <td class="" id=""></td>
                                 <td class="left" id=""></td>
@@ -488,7 +498,9 @@ dump($participants);
                                 <td class="" id=""></td>
                             </tr>
                             <tr class="" id="">
-                                <td class="header" id ="" colspan="2"><?= getInitialParticipantName($participants, 3, 1) ?></td>
+                                <td class="header" id ="" colspan="2">
+                                    <?= getInitialParticipantName($participants, 3, 1) ?>
+                                </td>
                                 <td class="" id=""></td>
                                 <td class="footer" id="" colspan="2"></td>
                                 <td class="" id=""></td>
@@ -612,7 +624,9 @@ dump($participants);
                                 <td class="" id=""></td>
                             </tr>
                             <tr class="" id="">
-                                <td class="header" id ="" colspan="2"><?= getInitialParticipantName($participants, 4, 1) ?></td>
+                                <td class="header" id ="" colspan="2">
+                                    <?= getInitialParticipantName($participants, 4, 1) ?>
+                                </td>
                                 <td class="" id=""></td>
                                 <td class="" id=""></td>
                                 <td class="" id=""></td>
@@ -676,7 +690,9 @@ dump($participants);
                             <tr class="" id="">
                                 <td class="footer" id ="" colspan="2"></td>
                                 <td class="" id=""></td>
-                                <td class="header" id="" colspan="2"></td>
+                                <td class="header" id ="" colspan="2">
+                                    <?= getInitialParticipantName($participants, 2, 2) ?>
+                                </td>
                                 <td class="" id=""></td>
                                 <td class="" id=""></td>
                                 <td class="left" id=""></td>
@@ -736,7 +752,9 @@ dump($participants);
                                 <td class="" id=""></td>
                             </tr>
                             <tr class="" id="">
-                                <td class="header" id ="" colspan="2"><?= getInitialParticipantName($participants, 5, 1) ?></td>
+                                <td class="header" id ="" colspan="2">
+                                    <?= getInitialParticipantName($participants, 5, 1) ?>
+                                </td>
                                 <td class="" id=""></td>
                                 <td class="footer" id="" colspan="2"></td>
                                 <td class="" id=""></td>
@@ -860,7 +878,9 @@ dump($participants);
                                 <td class="" id=""></td>
                             </tr>
                             <tr class="" id="">
-                                <td class="header" id ="" colspan="2"><?= getInitialParticipantName($participants, 6, 1) ?></td>
+                                <td class="header" id ="" colspan="2">
+                                    <?= getInitialParticipantName($participants, 6, 1) ?>
+                                </td>
                                 <td class="" id=""></td>
                                 <td class="" id=""></td>
                                 <td class="left" id=""></td>
@@ -924,7 +944,9 @@ dump($participants);
                             <tr class="" id="">
                                 <td class="footer" id ="" colspan="2"></td>
                                 <td class="" id=""></td>
-                                <td class="header" id="" colspan="2"></td>
+                                <td class="header" id ="" colspan="2">
+                                    <?= getInitialParticipantName($participants, 3, 2) ?>
+                                </td>
                                 <td class="" id=""></td>
                                 <td class="" id=""></td>
                                 <td class="" id=""></td>
@@ -984,7 +1006,9 @@ dump($participants);
                                 <td class="" id=""></td>
                             </tr>
                             <tr class="" id="">
-                                <td class="header" id ="" colspan="2"><?= getInitialParticipantName($participants, 7, 1) ?></td>
+                                <td class="header" id ="" colspan="2">
+                                    <?= getInitialParticipantName($participants, 7, 1) ?>
+                                </td>
                                 <td class="" id=""></td>
                                 <td class="footer" id="" colspan="2"></td>
                                 <td class="" id=""></td>
@@ -1108,7 +1132,9 @@ dump($participants);
                                 <td class="" id=""></td>
                             </tr>
                             <tr class="" id="">
-                                <td class="header" id ="" colspan="2"><?= getInitialParticipantName($participants, 8, 1) ?></td>
+                                <td class="header" id ="" colspan="2">
+                                    <?= getInitialParticipantName($participants, 8, 1) ?>
+                                </td>
                                 <td class="" id=""></td>
                                 <td class="" id=""></td>
                                 <td class="" id=""></td>
@@ -1172,7 +1198,9 @@ dump($participants);
                             <tr class="" id="">
                                 <td class="footer" id ="" colspan="2"></td>
                                 <td class="" id=""></td>
-                                <td class="header" id="" colspan="2"></td>
+                                <td class="header" id ="" colspan="2">
+                                    <?= getInitialParticipantName($participants, 4, 2) ?>
+                                </td>
                                 <td class="" id=""></td>
                                 <td class="" id=""></td>
                                 <td class="" id=""></td>
@@ -1420,7 +1448,9 @@ dump($participants);
                             <tr class="" id="">
                                 <td class="footer" id ="" colspan="2"></td>
                                 <td class="" id=""></td>
-                                <td class="header" id="" colspan="2"></td>
+                                <td class="header" id ="" colspan="2">
+                                    <?= getInitialParticipantName($participants, 5, 2) ?>
+                                </td>
                                 <td class="" id=""></td>
                                 <td class="" id=""></td>
                                 <td class="left" id=""></td>
@@ -1480,7 +1510,9 @@ dump($participants);
                                 <td class="" id=""></td>
                             </tr>
                             <tr class="" id="">
-                                <td class="header" id ="" colspan="2"><?= getInitialParticipantName($participants, 11, 1) ?></td>
+                                <td class="header" id ="" colspan="2">
+                                    <?= getInitialParticipantName($participants, 11, 1) ?>
+                                </td>
                                 <td class="" id=""></td>
                                 <td class="footer" id="" colspan="2"></td>
                                 <td class="" id=""></td>
@@ -1604,7 +1636,9 @@ dump($participants);
                                 <td class="" id=""></td>
                             </tr>
                             <tr class="" id="">
-                                <td class="header" id ="" colspan="2"><?= getInitialParticipantName($participants, 12, 1) ?></td>
+                                <td class="header" id ="" colspan="2">
+                                    <?= getInitialParticipantName($participants, 12, 1) ?>
+                                </td>
                                 <td class="" id=""></td>
                                 <td class="" id=""></td>
                                 <td class="" id=""></td>
@@ -1668,7 +1702,9 @@ dump($participants);
                             <tr class="" id="">
                                 <td class="footer" id ="" colspan="2"></td>
                                 <td class="" id=""></td>
-                                <td class="header" id="" colspan="2"></td>
+                                <td class="header" id ="" colspan="2">
+                                    <?= getInitialParticipantName($participants, 6, 2) ?>
+                                </td>
                                 <td class="" id=""></td>
                                 <td class="" id=""></td>
                                 <td class="left" id=""></td>
@@ -1728,7 +1764,9 @@ dump($participants);
                                 <td class="" id=""></td>
                             </tr>
                             <tr class="" id="">
-                                <td class="header" id ="" colspan="2"><?= getInitialParticipantName($participants, 13, 1) ?></td>
+                                <td class="header" id ="" colspan="2">
+                                    <?= getInitialParticipantName($participants, 13, 1) ?>
+                                </td>
                                 <td class="" id=""></td>
                                 <td class="footer" id="" colspan="2"></td>
                                 <td class="" id=""></td>
@@ -1852,7 +1890,9 @@ dump($participants);
                                 <td class="" id=""></td>
                             </tr>
                             <tr class="" id="">
-                                <td class="header" id ="" colspan="2"><?= getInitialParticipantName($participants, 14, 1) ?></td>
+                                <td class="header" id ="" colspan="2">
+                                    <?= getInitialParticipantName($participants, 14, 1) ?>
+                                </td>
                                 <td class="" id=""></td>
                                 <td class="" id=""></td>
                                 <td class="left" id=""></td>
@@ -1916,7 +1956,9 @@ dump($participants);
                             <tr class="" id="">
                                 <td class="footer" id ="" colspan="2"></td>
                                 <td class="" id=""></td>
-                                <td class="header" id="" colspan="2"></td>
+                                <td class="header" id ="" colspan="2">
+                                    <?= getInitialParticipantName($participants, 7, 2) ?>
+                                </td>
                                 <td class="" id=""></td>
                                 <td class="" id=""></td>
                                 <td class="" id=""></td>
@@ -2102,7 +2144,7 @@ function isWinner($participant) {
 }
 
 /**
- * @param $participant1 
+ * @param $participant1
  * @param $participant2
  * @param $previousRound
  * @return string
@@ -2127,6 +2169,6 @@ function getWinnerFromPreviousRound($participant1, $participant2, $previousRound
  * @return mixed|string
  */
 function getInitialParticipantName($participants, $index, $round) {
-    return !empty($participants['round'.$round][$index]->participantName) ? $participants['round1'][$index]->participantName : 'n/a';
+    return isset($participants['round'.$round][$index]) ? $participants['round'.$round][$index]->participantName : '';
 }
 ?>
