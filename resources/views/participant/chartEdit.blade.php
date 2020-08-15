@@ -1,5 +1,5 @@
 <?php
-dump($participants);
+    //dump($participants);
 ?>
 @extends('layouts.app')
 <style type="text/css">
@@ -34,22 +34,6 @@ dump($participants);
     /*    vertical-align: middle;*/
     /*    font-size: 11pt;*/
     /*    color: #666666;*/
-    /*}*/
-
-    /*td.header.left.right.winner {*/
-    /*    background-color: #d4edda;*/
-    /*    text-align: center;*/
-    /*    vertical-align: middle;*/
-    /*    font-size: 11pt;*/
-    /*    color: #155724;*/
-    /*}*/
-
-    /*td.header.left.right.loser {*/
-    /*    background-color: #f8d7da;*/
-    /*    text-align: center;*/
-    /*    vertical-align: middle;*/
-    /*    font-size: 11pt;*/
-    /*    color: #721c24;*/
     /*}*/
 
     /*table.chart td {*/
@@ -110,6 +94,22 @@ dump($participants);
         padding: 0px 10px 0px 10px !important;
         font-size: small !important;
     }
+
+    td.header.winner {
+        background-color: #d4edda;
+        text-align: center;
+        vertical-align: middle;
+        font-size: 11pt;
+        color: #155724;
+    }
+
+    td.header.loser {
+        background-color: #f8d7da;
+        text-align: center;
+        vertical-align: middle;
+        font-size: 11pt;
+        color: #721c24;
+    }
 </style>
 @section('content')
     <div class="chartContainer">
@@ -120,7 +120,7 @@ dump($participants);
                     <div class="card-body">
                         <table border="0">
                             <tr class="" id="">
-                                <td class="header" id ="" colspan="2">
+                                <td class="header<?= isWinner($participants, 0, 1) ?>" id ="" colspan="2">
                                     <?= getInitialParticipantName($participants, 0, 1) ?>
                                 </td>
                                 <td class="" id=""></td>
@@ -251,7 +251,7 @@ dump($participants);
                                 <td class="" id=""></td>
                             </tr>
                             <tr class="" id="">
-                                <td class="header" id ="" colspan="2">
+                                <td class="header<?= isWinner($participants, 1, 1) ?>" id ="" colspan="2">
                                     <?= getInitialParticipantName($participants, 1, 1) ?>
                                 </td>
                                 <td class="" id=""></td>
@@ -2172,14 +2172,18 @@ function getSetWinnerForm($event, $participants, $index, $round) {
 }
 
 /**
- * @param $participant
+ * @param $participants
+ * @param $index
+ * @param $round
  * @return string
  */
-function isWinner($participant) {
-    if ($participant->round1 === 'win') {
-        return 'winner';
-    } elseif ($participant->round1 === 'lose') {
-        return 'loser';
+function isWinner($participants, $index, $round) {
+    $roundName = 'round'.(string)$round;
+
+    if ($participants[$roundName][$index]->$roundName === 'win') {
+        return ' winner';
+    } elseif ($participants[$roundName][$index]->$roundName === 'lose') {
+        return ' loser';
     } else {
         return '';
     }
