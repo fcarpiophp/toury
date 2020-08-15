@@ -163,9 +163,13 @@ class ParticipantController extends Controller
      */
     public function setStatus($participantId, $round, $status): void
     {
+        $now = new \DateTime();
         $affected = DB::table('participants')
             ->where('id', $participantId)
-            ->update(['round'.$round => $status]);
+            ->update([
+                'round'.$round => $status,
+                'winDateTime' => $now
+            ]);
     }
 
     /**

@@ -1,5 +1,5 @@
 <?php
-    //dump($participants);
+    dump($participants);
 ?>
 @extends('layouts.app')
 <style type="text/css">
@@ -121,7 +121,7 @@
                         <table border="0">
                             <tr class="" id="">
                                 <td class="header<?= isWinner($participants, 0, 1) ?>" id ="" colspan="2">
-                                    <?= getInitialParticipantName($participants, 0, 1) ?>
+                                    <?= getParticipantName($participants, 0, 1) ?>
                                 </td>
                                 <td class="" id=""></td>
                                 <td class="" id=""></td>
@@ -190,7 +190,7 @@
                                 <td class="footer" id ="" colspan="2"></td>
                                 <td class="" id=""></td>
                                 <td class="header" id ="" colspan="2">
-                                    <?= getInitialParticipantName($participants, 0, 2) ?>
+                                    <?= getParticipantName($participants, 0, 2) ?>
                                 </td>
                                 <td class="" id=""></td>
                                 <td class="" id=""></td>
@@ -252,7 +252,7 @@
                             </tr>
                             <tr class="" id="">
                                 <td class="header<?= isWinner($participants, 1, 1) ?>" id ="" colspan="2">
-                                    <?= getInitialParticipantName($participants, 1, 1) ?>
+                                    <?= getParticipantName($participants, 1, 1) ?>
                                 </td>
                                 <td class="" id=""></td>
                                 <td class="footer" id="" colspan="2"></td>
@@ -379,8 +379,8 @@
                                 <td class="" id=""></td>
                             </tr>
                             <tr class="" id="">
-                                <td class="header" id ="" colspan="2">
-                                    <?= getInitialParticipantName($participants, 2, 1) ?>
+                                <td class="header<?= isWinner($participants, 2, 1) ?>" id ="" colspan="2">
+                                    <?= getParticipantName($participants, 2, 1) ?>
                                 </td>
                                 <td class="" id=""></td>
                                 <td class="" id=""></td>
@@ -448,7 +448,7 @@
                                 <td class="footer" id ="" colspan="2"></td>
                                 <td class="" id=""></td>
                                 <td class="header" id ="" colspan="2">
-                                    <?= getInitialParticipantName($participants, 1, 2) ?>
+                                    <?= getParticipantName($participants, 1, 2) ?>
                                 </td>
                                 <td class="" id=""></td>
                                 <td class="" id=""></td>
@@ -509,8 +509,8 @@
                                 <td class="" id=""></td>
                             </tr>
                             <tr class="" id="">
-                                <td class="header" id ="" colspan="2">
-                                    <?= getInitialParticipantName($participants, 3, 1) ?>
+                                <td class="header<?= isWinner($participants, 3, 1) ?>" id ="" colspan="2">
+                                    <?= getParticipantName($participants, 3, 1) ?>
                                 </td>
                                 <td class="" id=""></td>
                                 <td class="footer" id="" colspan="2"></td>
@@ -637,8 +637,8 @@
                                 <td class="" id=""></td>
                             </tr>
                             <tr class="" id="">
-                                <td class="header" id ="" colspan="2">
-                                    <?= getInitialParticipantName($participants, 4, 1) ?>
+                                <td class="header<?= isWinner($participants, 4, 1) ?>" id ="" colspan="2">
+                                    <?= getParticipantName($participants, 4, 1) ?>
                                 </td>
                                 <td class="" id=""></td>
                                 <td class="" id=""></td>
@@ -706,7 +706,7 @@
                                 <td class="footer" id ="" colspan="2"></td>
                                 <td class="" id=""></td>
                                 <td class="header" id ="" colspan="2">
-                                    <?= getInitialParticipantName($participants, 2, 2) ?>
+                                    <?= getParticipantName($participants, 2, 2) ?>
                                 </td>
                                 <td class="" id=""></td>
                                 <td class="" id=""></td>
@@ -767,8 +767,8 @@
                                 <td class="" id=""></td>
                             </tr>
                             <tr class="" id="">
-                                <td class="header" id ="" colspan="2">
-                                    <?= getInitialParticipantName($participants, 5, 1) ?>
+                                <td class="header<?= isWinner($participants, 5, 1) ?>" id ="" colspan="2">
+                                    <?= getParticipantName($participants, 5, 1) ?>
                                 </td>
                                 <td class="" id=""></td>
                                 <td class="footer" id="" colspan="2"></td>
@@ -895,8 +895,8 @@
                                 <td class="" id=""></td>
                             </tr>
                             <tr class="" id="">
-                                <td class="header" id ="" colspan="2">
-                                    <?= getInitialParticipantName($participants, 6, 1) ?>
+                                <td class="header<?= isWinner($participants, 6, 1) ?>" id ="" colspan="2">
+                                    <?= getParticipantName($participants, 6, 1) ?>
                                 </td>
                                 <td class="" id=""></td>
                                 <td class="" id=""></td>
@@ -964,7 +964,7 @@
                                 <td class="footer" id ="" colspan="2"></td>
                                 <td class="" id=""></td>
                                 <td class="header" id ="" colspan="2">
-                                    <?= getInitialParticipantName($participants, 3, 2) ?>
+                                    <?= getParticipantName($participants, 3, 2) ?>
                                 </td>
                                 <td class="" id=""></td>
                                 <td class="" id=""></td>
@@ -1025,8 +1025,8 @@
                                 <td class="" id=""></td>
                             </tr>
                             <tr class="" id="">
-                                <td class="header" id ="" colspan="2">
-                                    <?= getInitialParticipantName($participants, 7, 1) ?>
+                                <td class="header<?= isWinner($participants, 7, 1) ?>" id ="" colspan="2">
+                                    <?= getParticipantName($participants, 7, 1) ?>
                                 </td>
                                 <td class="" id=""></td>
                                 <td class="footer" id="" colspan="2"></td>
@@ -1153,8 +1153,8 @@
                                 <td class="" id=""></td>
                             </tr>
                             <tr class="" id="">
-                                <td class="header" id ="" colspan="2">
-                                    <?= getInitialParticipantName($participants, 8, 1) ?>
+                                <td class="header<?= isWinner($participants, 8, 1) ?>" id ="" colspan="2">
+                                    <?= getParticipantName($participants, 8, 1) ?>
                                 </td>
                                 <td class="" id=""></td>
                                 <td class="" id=""></td>
@@ -1222,7 +1222,7 @@
                                 <td class="footer" id ="" colspan="2"></td>
                                 <td class="" id=""></td>
                                 <td class="header" id ="" colspan="2">
-                                    <?= getInitialParticipantName($participants, 4, 2) ?>
+                                    <?= getParticipantName($participants, 4, 2) ?>
                                 </td>
                                 <td class="" id=""></td>
                                 <td class="" id=""></td>
@@ -1283,8 +1283,8 @@
                                 <td class="" id=""></td>
                             </tr>
                             <tr class="" id="">
-                                <td class="header" id ="" colspan="2">
-                                    <?= getInitialParticipantName($participants, 9, 1) ?>
+                                <td class="header<?= isWinner($participants, 9, 1) ?>" id ="" colspan="2">
+                                    <?= getParticipantName($participants, 9, 1) ?>
                                 </td>
                                 <td class="" id=""></td>
                                 <td class="footer" id="" colspan="2"></td>
@@ -1411,8 +1411,8 @@
                                 <td class="" id=""></td>
                             </tr>
                             <tr class="" id="">
-                                <td class="header" id ="" colspan="2">
-                                    <?= getInitialParticipantName($participants, 10, 1) ?>
+                                <td class="header<?= isWinner($participants, 10, 1) ?>" id ="" colspan="2">
+                                    <?= getParticipantName($participants, 10, 1) ?>
                                 </td>
                                 <td class="" id=""></td>
                                 <td class="" id=""></td>
@@ -1434,7 +1434,7 @@
                             </tr>
                             <tr class="" id="">
                                 <td class="body" id ="" colspan="2">
-                                    <?= getSetWinnerForm($event, $participants, 7, 1) ?>
+                                    <?= getSetWinnerForm($event, $participants, 10, 1) ?>
                                 </td>
                                 <td class="" id=""></td>
                                 <td class="" id=""></td>
@@ -1480,7 +1480,7 @@
                                 <td class="footer" id ="" colspan="2"></td>
                                 <td class="" id=""></td>
                                 <td class="header" id ="" colspan="2">
-                                    <?= getInitialParticipantName($participants, 5, 2) ?>
+                                    <?= getParticipantName($participants, 5, 2) ?>
                                 </td>
                                 <td class="" id=""></td>
                                 <td class="" id=""></td>
@@ -1541,8 +1541,8 @@
                                 <td class="" id=""></td>
                             </tr>
                             <tr class="" id="">
-                                <td class="header" id ="" colspan="2">
-                                    <?= getInitialParticipantName($participants, 11, 1) ?>
+                                <td class="header<?= isWinner($participants, 11, 1) ?>" id ="" colspan="2">
+                                    <?= getParticipantName($participants, 11, 1) ?>
                                 </td>
                                 <td class="" id=""></td>
                                 <td class="footer" id="" colspan="2"></td>
@@ -1669,8 +1669,8 @@
                                 <td class="" id=""></td>
                             </tr>
                             <tr class="" id="">
-                                <td class="header" id ="" colspan="2">
-                                    <?= getInitialParticipantName($participants, 12, 1) ?>
+                                <td class="header<?= isWinner($participants, 12, 1) ?>" id ="" colspan="2">
+                                    <?= getParticipantName($participants, 12, 1) ?>
                                 </td>
                                 <td class="" id=""></td>
                                 <td class="" id=""></td>
@@ -1738,7 +1738,7 @@
                                 <td class="footer" id ="" colspan="2"></td>
                                 <td class="" id=""></td>
                                 <td class="header" id ="" colspan="2">
-                                    <?= getInitialParticipantName($participants, 6, 2) ?>
+                                    <?= getParticipantName($participants, 6, 2) ?>
                                 </td>
                                 <td class="" id=""></td>
                                 <td class="" id=""></td>
@@ -1799,8 +1799,8 @@
                                 <td class="" id=""></td>
                             </tr>
                             <tr class="" id="">
-                                <td class="header" id ="" colspan="2">
-                                    <?= getInitialParticipantName($participants, 13, 1) ?>
+                                <td class="header<?= isWinner($participants, 13, 1) ?>" id ="" colspan="2">
+                                    <?= getParticipantName($participants, 13, 1) ?>
                                 </td>
                                 <td class="" id=""></td>
                                 <td class="footer" id="" colspan="2"></td>
@@ -1927,8 +1927,8 @@
                                 <td class="" id=""></td>
                             </tr>
                             <tr class="" id="">
-                                <td class="header" id ="" colspan="2">
-                                    <?= getInitialParticipantName($participants, 14, 1) ?>
+                                <td class="header<?= isWinner($participants, 14, 1) ?>" id ="" colspan="2">
+                                    <?= getParticipantName($participants, 14, 1) ?>
                                 </td>
                                 <td class="" id=""></td>
                                 <td class="" id=""></td>
@@ -1996,7 +1996,7 @@
                                 <td class="footer" id ="" colspan="2"></td>
                                 <td class="" id=""></td>
                                 <td class="header" id ="" colspan="2">
-                                    <?= getInitialParticipantName($participants, 7, 2) ?>
+                                    <?= getParticipantName($participants, 7, 2) ?>
                                 </td>
                                 <td class="" id=""></td>
                                 <td class="" id=""></td>
@@ -2057,8 +2057,8 @@
                                 <td class="" id=""></td>
                             </tr>
                             <tr class="" id="">
-                                <td class="header" id ="" colspan="2">
-                                    <?= getInitialParticipantName($participants, 15, 1) ?>
+                                <td class="header<?= isWinner($participants, 15, 1) ?>" id ="" colspan="2">
+                                    <?= getParticipantName($participants, 15, 1) ?>
                                 </td>
                                 <td class="" id=""></td>
                                 <td class="footer" id="" colspan="2"></td>
@@ -2165,7 +2165,7 @@ function getSetWinnerForm($event, $participants, $index, $round) {
             <form method="POST" action="/participant/storeStanding/'.$event->id.'/'.$participants['round'.$round][$index]->id.'/'.$round.'" accept-charset="UTF-8">
                 <input type="hidden" name="_token" value="'.csrf_token().'">
                 <input name="participantId" type="hidden" value="'.$participants['round'.$round][$index]->id.'">
-                <button type="submit" class="btn btn-success btn-sm">Set Winner</button>
+                <button type="submit" class="btn btn-success btn-sm">Wins!</button>
             </form>';
     }
     return '';
@@ -2178,11 +2178,11 @@ function getSetWinnerForm($event, $participants, $index, $round) {
  * @return string
  */
 function isWinner($participants, $index, $round) {
-    $roundName = 'round'.(string)$round;
+    $roundName = 'round'.$round;
 
-    if ($participants[$roundName][$index]->$roundName === 'win') {
+    if (isset($participants[$roundName][$index]) && $participants[$roundName][$index]->$roundName === 'win') {
         return ' winner';
-    } elseif ($participants[$roundName][$index]->$roundName === 'lose') {
+    } elseif (isset($participants[$roundName][$index]) && $participants[$roundName][$index]->$roundName === 'lose') {
         return ' loser';
     } else {
         return '';
@@ -2214,11 +2214,54 @@ function getWinnerFromPreviousRound($participant1, $participant2, $previousRound
  * @param $round
  * @return mixed|string
  */
-function getInitialParticipantName($participants, $index, $round) {
+function getParticipantName($participants, $index, $round) {
     $name = '';
     if ($round === 1) {
         $name = 'Not Used';
     }
-    return isset($participants['round'.$round][$index]) ? $participants['round'.$round][$index]->participantName : $name;
+    $participantName = isset($participants['round'.$round][$index]) ? $participants['round'.$round][$index]->participantName : $name;
+
+    if ($participantName != '') {
+        return $participantName;
+    }
+    $previousRoundPlayer1Index = $index * 2;
+    $previousRoundPlayer2Index = ($index * 2) + 1;
+    $roundName = 'round'.--$round;
+
+    if ($participants['round'.$round][$previousRoundPlayer1Index]->$roundName == 'win') {
+        return $participants['round'.$round][$previousRoundPlayer1Index]->participantName;
+    }
+
+    if ($participants['round'.$round][$previousRoundPlayer2Index]->$roundName == 'win') {
+        return $participants['round'.$round][$previousRoundPlayer2Index]->participantName;
+    }
+
+    return 'TBD';
 }
+
+function getParticipantWinningDate($participants, $index, $round) {
+    $name = '';
+    if ($round === 1) {
+        $name = 'Not Used';
+    }
+    $participantName = isset($participants['round'.$round][$index]) ? $participants['round'.$round][$index]->participantName : $name;
+
+    if ($participantName != '') {
+        return $participantName;
+    }
+    $previousRoundPlayer1Index = $index * 2;
+    $previousRoundPlayer2Index = ($index * 2) + 1;
+    $roundName = 'round'.--$round;
+
+    if ($participants['round'.$round][$previousRoundPlayer1Index]->$roundName == 'win') {
+        return $participants['round'.$round][$previousRoundPlayer1Index]->participantName;
+    }
+
+    if ($participants['round'.$round][$previousRoundPlayer2Index]->$roundName == 'win') {
+        return $participants['round'.$round][$previousRoundPlayer2Index]->participantName;
+    }
+
+    return 'TBD';
+}
+
 ?>
