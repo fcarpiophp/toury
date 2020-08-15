@@ -105,6 +105,11 @@ dump($participants);
     td.bottom {
         border-bottom: 1px solid #cccccc;
     }
+
+    .btn-sm {
+        padding: 0px 10px 0px 10px !important;
+        font-size: small !important;
+    }
 </style>
 @section('content')
     <div class="chartContainer">
@@ -138,7 +143,9 @@ dump($participants);
                                 <td class="" id=""></td>
                             </tr>
                             <tr class="" id="">
-                                <td class="body" id ="" colspan="2"></td>
+                                <td class="body" id ="" colspan="2">
+                                    <?= getSetWinnerForm($event, $participants, 0, 1) ?>
+                                </td>
                                 <td class="" id=""></td>
                                 <td class="" id=""></td>
                                 <td class="" id=""></td>
@@ -266,7 +273,9 @@ dump($participants);
                                 <td class="" id=""></td>
                             </tr>
                             <tr class="" id="">
-                                <td class="body" id ="" colspan="2"></td>
+                                <td class="body" id ="" colspan="2">
+                                    <?= getSetWinnerForm($event, $participants, 1, 1) ?>
+                                </td>
                                 <td class="" id=""></td>
                                 <td class="" id=""></td>
                                 <td class="left" id=""></td>
@@ -392,7 +401,9 @@ dump($participants);
                                 <td class="" id=""></td>
                             </tr>
                             <tr class="" id="">
-                                <td class="body" id ="" colspan="2"></td>
+                                <td class="body" id ="" colspan="2">
+                                    <?= getSetWinnerForm($event, $participants, 2, 1) ?>
+                                </td>
                                 <td class="" id=""></td>
                                 <td class="" id=""></td>
                                 <td class="left" id=""></td>
@@ -520,7 +531,9 @@ dump($participants);
                                 <td class="" id=""></td>
                             </tr>
                             <tr class="" id="">
-                                <td class="body" id ="" colspan="2"></td>
+                                <td class="body" id ="" colspan="2">
+                                    <?= getSetWinnerForm($event, $participants, 3, 1) ?>
+                                </td>
                                 <td class="" id=""></td>
                                 <td class="" id=""></td>
                                 <td class="" id=""></td>
@@ -646,7 +659,9 @@ dump($participants);
                                 <td class="" id=""></td>
                             </tr>
                             <tr class="" id="">
-                                <td class="body" id ="" colspan="2"></td>
+                                <td class="body" id ="" colspan="2">
+                                    <?= getSetWinnerForm($event, $participants, 4, 1) ?>
+                                </td>
                                 <td class="" id=""></td>
                                 <td class="" id=""></td>
                                 <td class="" id=""></td>
@@ -774,7 +789,9 @@ dump($participants);
                                 <td class="" id=""></td>
                             </tr>
                             <tr class="" id="">
-                                <td class="body" id ="" colspan="2"></td>
+                                <td class="body" id ="" colspan="2">
+                                    <?= getSetWinnerForm($event, $participants, 5, 1) ?>
+                                </td>
                                 <td class="" id=""></td>
                                 <td class="" id=""></td>
                                 <td class="left" id=""></td>
@@ -900,7 +917,9 @@ dump($participants);
                                 <td class="" id=""></td>
                             </tr>
                             <tr class="" id="">
-                                <td class="body" id ="" colspan="2"></td>
+                                <td class="body" id ="" colspan="2">
+                                    <?= getSetWinnerForm($event, $participants, 6, 1) ?>
+                                </td>
                                 <td class="" id=""></td>
                                 <td class="" id=""></td>
                                 <td class="left" id=""></td>
@@ -1028,7 +1047,9 @@ dump($participants);
                                 <td class="" id=""></td>
                             </tr>
                             <tr class="" id="">
-                                <td class="body" id ="" colspan="2"></td>
+                                <td class="body" id ="" colspan="2">
+                                    <?= getSetWinnerForm($event, $participants, 7, 1) ?>
+                                </td>
                                 <td class="" id=""></td>
                                 <td class="" id=""></td>
                                 <td class="" id=""></td>
@@ -1154,7 +1175,9 @@ dump($participants);
                                 <td class="" id=""></td>
                             </tr>
                             <tr class="" id="">
-                                <td class="body" id ="" colspan="2"></td>
+                                <td class="body" id ="" colspan="2">
+                                    <?= getSetWinnerForm($event, $participants, 8, 1) ?>
+                                </td>
                                 <td class="" id=""></td>
                                 <td class="" id=""></td>
                                 <td class="" id=""></td>
@@ -1260,7 +1283,9 @@ dump($participants);
                                 <td class="" id=""></td>
                             </tr>
                             <tr class="" id="">
-                                <td class="header" id ="" colspan="2"><?= getInitialParticipantName($participants, 9, 1) ?></td>
+                                <td class="header" id ="" colspan="2">
+                                    <?= getInitialParticipantName($participants, 9, 1) ?>
+                                </td>
                                 <td class="" id=""></td>
                                 <td class="footer" id="" colspan="2"></td>
                                 <td class="" id=""></td>
@@ -1280,7 +1305,9 @@ dump($participants);
                                 <td class="" id=""></td>
                             </tr>
                             <tr class="" id="">
-                                <td class="body" id ="" colspan="2"></td>
+                                <td class="body" id ="" colspan="2">
+                                    <?= getSetWinnerForm($event, $participants, 9, 1) ?>
+                                </td>
                                 <td class="" id=""></td>
                                 <td class="" id=""></td>
                                 <td class="left" id=""></td>
@@ -1384,7 +1411,9 @@ dump($participants);
                                 <td class="" id=""></td>
                             </tr>
                             <tr class="" id="">
-                                <td class="header" id ="" colspan="2"><?= getInitialParticipantName($participants, 10, 1) ?></td>
+                                <td class="header" id ="" colspan="2">
+                                    <?= getInitialParticipantName($participants, 10, 1) ?>
+                                </td>
                                 <td class="" id=""></td>
                                 <td class="" id=""></td>
                                 <td class="left" id=""></td>
@@ -1404,7 +1433,9 @@ dump($participants);
                                 <td class="" id=""></td>
                             </tr>
                             <tr class="" id="">
-                                <td class="body" id ="" colspan="2"></td>
+                                <td class="body" id ="" colspan="2">
+                                    <?= getSetWinnerForm($event, $participants, 7, 1) ?>
+                                </td>
                                 <td class="" id=""></td>
                                 <td class="" id=""></td>
                                 <td class="left" id=""></td>
@@ -1532,7 +1563,9 @@ dump($participants);
                                 <td class="" id=""></td>
                             </tr>
                             <tr class="" id="">
-                                <td class="body" id ="" colspan="2"></td>
+                                <td class="body" id ="" colspan="2">
+                                    <?= getSetWinnerForm($event, $participants, 11, 1) ?>
+                                </td>
                                 <td class="" id=""></td>
                                 <td class="" id=""></td>
                                 <td class="" id=""></td>
@@ -1658,7 +1691,9 @@ dump($participants);
                                 <td class="" id=""></td>
                             </tr>
                             <tr class="" id="">
-                                <td class="body" id ="" colspan="2"></td>
+                                <td class="body" id ="" colspan="2">
+                                    <?= getSetWinnerForm($event, $participants, 12, 1) ?>
+                                </td>
                                 <td class="" id=""></td>
                                 <td class="" id=""></td>
                                 <td class="" id=""></td>
@@ -1786,7 +1821,9 @@ dump($participants);
                                 <td class="" id=""></td>
                             </tr>
                             <tr class="" id="">
-                                <td class="body" id ="" colspan="2"></td>
+                                <td class="body" id ="" colspan="2">
+                                    <?= getSetWinnerForm($event, $participants, 13, 1) ?>
+                                </td>
                                 <td class="" id=""></td>
                                 <td class="" id=""></td>
                                 <td class="left" id=""></td>
@@ -1912,7 +1949,9 @@ dump($participants);
                                 <td class="" id=""></td>
                             </tr>
                             <tr class="" id="">
-                                <td class="body" id ="" colspan="2"></td>
+                                <td class="body" id ="" colspan="2">
+                                    <?= getSetWinnerForm($event, $participants, 14, 1) ?>
+                                </td>
                                 <td class="" id=""></td>
                                 <td class="" id=""></td>
                                 <td class="left" id=""></td>
@@ -2018,7 +2057,9 @@ dump($participants);
                                 <td class="" id=""></td>
                             </tr>
                             <tr class="" id="">
-                                <td class="header" id ="" colspan="2"><?= getInitialParticipantName($participants, 15, 1) ?></td>
+                                <td class="header" id ="" colspan="2">
+                                    <?= getInitialParticipantName($participants, 15, 1) ?>
+                                </td>
                                 <td class="" id=""></td>
                                 <td class="footer" id="" colspan="2"></td>
                                 <td class="" id=""></td>
@@ -2038,7 +2079,9 @@ dump($participants);
                                 <td class="" id=""></td>
                             </tr>
                             <tr class="" id="">
-                                <td class="body" id ="" colspan="2"></td>
+                                <td class="body" id ="" colspan="2">
+                                    <?= getSetWinnerForm($event, $participants, 15, 1) ?>
+                                </td>
                                 <td class="" id=""></td>
                                 <td class="" id=""></td>
                                 <td class="" id=""></td>
@@ -2111,19 +2154,18 @@ dump($participants);
 <?php
 /**
  * @param $event
- * @param $participantId
+ * @param $participants
+ * @param $index
  * @param $round
  * @return string
  */
-function getSetWinnerForm($event, $participantId, $round) {
-    if (!empty($participantId)) {
+function getSetWinnerForm($event, $participants, $index, $round) {
+    if (!empty($participants['round'.$round][$index]->id)) {
         return '
-            <form method="POST" action="/participant/storeStanding/'.$event->id.'/'.$participantId.'/'.$round.'" accept-charset="UTF-8">
+            <form method="POST" action="/participant/storeStanding/'.$event->id.'/'.$participants['round'.$round][$index]->id.'/'.$round.'" accept-charset="UTF-8">
                 <input type="hidden" name="_token" value="'.csrf_token().'">
-                <input name="participantId" type="hidden" value="'.$participantId.'">
-                <button type="submit" class="btn btn-success">
-                    <i class="fa fa-trophy" aria-hidden="true"></i>
-                </button>
+                <input name="participantId" type="hidden" value="'.$participants['round'.$round][$index]->id.'">
+                <button type="submit" class="btn btn-success btn-sm">Set Winner</button>
             </form>';
     }
     return '';
@@ -2169,6 +2211,10 @@ function getWinnerFromPreviousRound($participant1, $participant2, $previousRound
  * @return mixed|string
  */
 function getInitialParticipantName($participants, $index, $round) {
-    return isset($participants['round'.$round][$index]) ? $participants['round'.$round][$index]->participantName : '';
+    $name = '';
+    if ($round === 1) {
+        $name = 'Not Used';
+    }
+    return isset($participants['round'.$round][$index]) ? $participants['round'.$round][$index]->participantName : $name;
 }
 ?>

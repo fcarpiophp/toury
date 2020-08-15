@@ -147,7 +147,7 @@ class ParticipantController extends Controller
     public function getOpponentIdMatrix($participantId, $participants, $round) {
         switch ($round) {
             case 1:
-                $opponentId = $this::getFirstRoundOpponentId($participantId, $participants);
+                $opponentId = $this::getRoundOneOpponentId($participantId, $participants, $round);
                 break;
             default:
                 $opponentId = null;
@@ -171,17 +171,18 @@ class ParticipantController extends Controller
     /**
      * @param $participantId
      * @param $participants
+     * @param $round
      * @return int
      */
-    public static function getFirstRoundOpponentId($participantId, $participants) {
+    public static function getRoundOneOpponentId($participantId, $participants, $round) {
+        $reIndexedParticipantId = null;
         // Search re-indexed participants for this participant id
-        foreach ($participants as $key => $participant) {
+        foreach ($participants['round'.$round] as $key => $participant) {
             if ($participant->id == $participantId) {
                 $reIndexedParticipantId = $key;
                 continue;
             }
         }
-
         return $reIndexedParticipantId % 2 == 0 ? $participantId + 1 : $participantId - 1;
     }
 
