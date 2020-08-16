@@ -23,7 +23,10 @@ class CreateParticipantsTable extends Migration
             $table->string('round3')->default('na');
             $table->string('round4')->default('na');
             $table->string('round5')->default('na');
-            $table->dateTime('winDateTime')->nullable();
+            $table->dateTime('round1PlayDate')->nullable();
+            $table->dateTime('round2PlayDate')->nullable();
+            $table->dateTime('round3PlayDate')->nullable();
+            $table->dateTime('round4PlayDate')->nullable();
             $table->timestamps();
         });
     }

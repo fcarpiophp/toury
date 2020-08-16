@@ -2165,7 +2165,7 @@ function getSetWinnerForm($event, $participants, $index, $round) {
             <form method="POST" action="/participant/storeStanding/'.$event->id.'/'.$participants['round'.$round][$index]->id.'/'.$round.'" accept-charset="UTF-8">
                 <input type="hidden" name="_token" value="'.csrf_token().'">
                 <input name="participantId" type="hidden" value="'.$participants['round'.$round][$index]->id.'">
-                <button type="submit" class="btn btn-success btn-sm">Wins!</button>
+                <button type="submit" class="btn btn-success btn-sm">Set as Winner</button>
             </form>';
     }
     return '';
@@ -2228,40 +2228,77 @@ function getParticipantName($participants, $index, $round) {
     $previousRoundPlayer2Index = ($index * 2) + 1;
     $roundName = 'round'.--$round;
 
-    if ($participants['round'.$round][$previousRoundPlayer1Index]->$roundName == 'win') {
+    if (isset($participants['round'.$round][$previousRoundPlayer1Index]) &&
+        $participants['round'.$round][$previousRoundPlayer1Index]->$roundName == 'win') {
         return $participants['round'.$round][$previousRoundPlayer1Index]->participantName;
     }
 
-    if ($participants['round'.$round][$previousRoundPlayer2Index]->$roundName == 'win') {
+    if (isset($participants['round'.$round][$previousRoundPlayer2Index]) &&
+        $participants['round'.$round][$previousRoundPlayer2Index]->$roundName == 'win') {
         return $participants['round'.$round][$previousRoundPlayer2Index]->participantName;
     }
 
-    return 'TBD';
+    return '';
 }
 
+/**
+ * @param $participants
+ * @param $index
+ * @param $round
+ * @return mixed|string|null
+ */
+//function getParticipantId($participants, $index, $round) {
+//    $participantId = null;
+//    if ($round === 1) {
+//        $participantId = 'Not Used';
+//    }
+//    $participantId = isset($participants['round'.$round][$index]) ? $participants['round'.$round][$index]->participantName : $participantId;
+//
+//    if ($participantId != '') {
+//        return $participantId;
+//    }
+//    $previousRoundPlayer1Index = $index * 2;
+//    $previousRoundPlayer2Index = ($index * 2) + 1;
+//    $roundName = 'round'.--$round;
+//
+//    if (isset($participants['round'.$round][$previousRoundPlayer1Index]) &&
+//        $participants['round'.$round][$previousRoundPlayer1Index]->$roundName == 'win') {
+//        return $participants['round'.$round][$previousRoundPlayer1Index]->id;
+//    }
+//
+//    if (isset($participants['round'.$round][$previousRoundPlayer2Index]) &&
+//        $participants['round'.$round][$previousRoundPlayer2Index]->$roundName == 'win') {
+//        return $participants['round'.$round][$previousRoundPlayer2Index]->id;
+//    }
+//
+//    return $participantId;
+//}
+
 function getParticipantWinningDate($participants, $index, $round) {
-    $name = '';
-    if ($round === 1) {
-        $name = 'Not Used';
+//    $name = '';
+//    if ($round === 1) {
+//        $name = 'Not Used';
+//    }
+//    $participantName = isset($participants['round'.$round][$index]) ? $participants['round'.$round][$index]->participantName : $name;
+//
+//    if ($participantName != '') {
+//        return $participantName;
+//    }
+//    $previousRoundPlayer1Index = $index * 2;
+//    $previousRoundPlayer2Index = ($index * 2) + 1;
+//    $roundName = 'round'.--$round;
+//
+//    if ($participants['round'.$round][$previousRoundPlayer1Index]->$roundName == 'win') {
+//        return $participants['round'.$round][$previousRoundPlayer1Index]->participantName;
+//    }
+//dump($index);
+//dump($round);
+//    die();
+    if (isset($participants['round'.$round][$index])) {
+        return $participants['round'.$round][$index]->winDateTime;
     }
-    $participantName = isset($participants['round'.$round][$index]) ? $participants['round'.$round][$index]->participantName : $name;
 
-    if ($participantName != '') {
-        return $participantName;
-    }
-    $previousRoundPlayer1Index = $index * 2;
-    $previousRoundPlayer2Index = ($index * 2) + 1;
-    $roundName = 'round'.--$round;
-
-    if ($participants['round'.$round][$previousRoundPlayer1Index]->$roundName == 'win') {
-        return $participants['round'.$round][$previousRoundPlayer1Index]->participantName;
-    }
-
-    if ($participants['round'.$round][$previousRoundPlayer2Index]->$roundName == 'win') {
-        return $participants['round'.$round][$previousRoundPlayer2Index]->participantName;
-    }
-
-    return 'TBD';
+    return 'ugh!';
 }
 
 ?>

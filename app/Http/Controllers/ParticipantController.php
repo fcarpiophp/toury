@@ -168,7 +168,7 @@ class ParticipantController extends Controller
             ->where('id', $participantId)
             ->update([
                 'round'.$round => $status,
-                'winDateTime' => $now
+                'round'.$round.'PlayDate' => $now
             ]);
     }
 
@@ -197,6 +197,50 @@ class ParticipantController extends Controller
     public function indexParticipants(\Illuminate\Support\Collection $participants): array
     {
         $indexedParticipants = array();
+
+        if ($participants->count() < 9) {
+            list($participant, $indexedParticipants) = $this->indexLessThanNineParticipants($participants, $indexedParticipants);
+        } elseif ($participants->count() > 9 || $participants->count() < 12) {
+            $indexedParticipants = $this->indexBetweenTenAndElevenParticipoants($participants, $indexedParticipants);
+        } else {
+            list($participant, $indexedParticipants) = $this->indexTwelveAndOver($participants, $indexedParticipants);
+        }
+        // At this point the initial state of the participants is set
+        // Now we need to advance the winners to the next round
+
+        foreach ($indexedParticipants as $key => $participantRounds) {
+            $cnt = 1;
+            foreach ($participantRounds as $k => $participant) {
+                $thisRound = 'round'.$cnt;
+                $nextRound = 'round'.($cnt + 1);
+                if ($participant->$thisRound == 'win') {
+                    $indexedParticipants[$nextRound][] = $participant;
+                }
+            }
+        }
+        return $indexedParticipants;
+    }
+
+    /**
+     * @param \Illuminate\Support\Collection $participants
+     * @param array $indexedParticipants
+     * @return array
+     */
+    public function indexLessThanNineParticipants(\Illuminate\Support\Collection $participants, array $indexedParticipants): array
+    {
+        foreach ($participants as $participant) {
+            $indexedParticipants['round2'][] = $participant;
+        }
+        return array($participant, $indexedParticipants);
+    }
+
+    /**
+     * @param \Illuminate\Support\Collection $participants
+     * @param array $indexedParticipants
+     * @return array
+     */
+    public function indexBetweenTenAndElevenParticipoants(\Illuminate\Support\Collection $participants, array $indexedParticipants): array
+    {
         $twoTierParticipants = array();
 
         if ($participants->count() < 9) {
@@ -211,7 +255,7 @@ class ParticipantController extends Controller
                 $indexedParticipants[] = $participant;
             }
 
-            $round1Participants  = 2 * (count($participants) - 8);
+            $round1Participants = 2 * (count($participants) - 8);
             $round2StartingIndex = $round1Participants / 2;
 
             foreach ($indexedParticipants as $participant) {
@@ -224,6 +268,24 @@ class ParticipantController extends Controller
         }
 
         return $twoTierParticipants;
+    }
 
+    /**
+     * @param \Illuminate\Support\Collection $participants
+     * @param array $indexedParticipants
+     * @return array
+     */
+    public function indexTwelveAndOver(\Illuminate\Support\Collection $participants, array $indexedParticipants): array
+    {
+        foreach ($participants as $participant) {
+            $indexedParticipants['round1'][] = $participant;
+        }
+
+        $count = count($indexedParticipants['round1']);
+        if ($count % 2 == 1) {
+            $lastOddParticipant = array_pop($indexedParticipants['round1']);
+            $indexedParticipants['round2'][($count - 1) / 2] = $lastOddParticipant;
+        }
+        return array($participant, $indexedParticipants);
     }
 }
